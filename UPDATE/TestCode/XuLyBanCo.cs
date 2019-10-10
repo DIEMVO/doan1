@@ -14,9 +14,10 @@ namespace GameCaro
 	{
 		// Properties
 		public Panel banco; //Khai báo Panel bàn cờ
-        public MyStack<Point> STACK;      //Ngăn xếp lưu trữ các vị trí đã đánh để Undo
+   
+        public Stack<Point> STACK;      //Ngăn xếp lưu trữ các vị trí đã đánh để Undo
 
-        public MyStack<Point> Stack2;     //dùng để clear bàn cờ
+        public Stack<Point> Stack2;     //dùng để clear bàn cờ
 
         public Queue<Point> QUEUE;      //Hàng đợi lưu trữ lại các vị trí đã đánh để mô phỏng lại ván cờ
 
@@ -95,11 +96,11 @@ namespace GameCaro
 				new Player("Second Player", Image.FromFile("O.jpg"),Amthanh2)
 			};
             //Khởi Tạo stack, queue
-            STACK = new MyStack<Point>();
+            STACK = new Stack<Point>();
 
             QUEUE = new Queue<Point>();
 
-            Stack2 = new MyStack<Point>();
+            Stack2 = new Stack<Point>();
 
             //Lấy thông tin tên người chơi từ formNhapThongTin
             FormNhapthongTin f = new FormNhapthongTin();
