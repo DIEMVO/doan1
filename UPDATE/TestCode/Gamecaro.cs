@@ -6,10 +6,12 @@ using System.Drawing;
 using System.IO;
 using System.Linq;
 using System.Media;
+using System.Net.NetworkInformation;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
+using TestCode;
 
 namespace GameCaro
 {
@@ -21,6 +23,8 @@ namespace GameCaro
 
         private int sound = 0;
 
+        SocketManager socket;
+
         public Form1()
 		{
 			InitializeComponent();
@@ -29,6 +33,8 @@ namespace GameCaro
 
 			BanCo.VeBanCo();
 			NhacNen.Play();
+
+            socket = new SocketManager();
 		}
 
 		private void tmnote_Tick(object sender, EventArgs e)
@@ -101,6 +107,72 @@ namespace GameCaro
                 btnUndo.Enabled = false;
         }
 
+        private void btnLAN_Click(object sender, EventArgs e)
+        {
+            socket.IP = txbIP.Text;
+
+            if (!socket.ConnectServer())        //ko thể kết nối server 
+            {
+                socket.CreateServer();
+            }
+            else
+            {
+                Thread listenThread = new Thread(() =>
+                {
+                    while (true)
+                    {
+                        Thread.Sleep(500);
+                        try
+                        {
+                            Listen();
+                            break;
+                        }
+                        catch
+                        {
+
+                        }
+                    }
+                });
+                listenThread.IsBackground = true;
+                listenThread.Start();
+
+                socket.Send("Thông tin từ Client..");
+            }
+        }
+
+        void Listen()
+        {
+            string data = (string)socket.Receive();
+
+            MessageBox.Show(data);
+        }
+
+        private void Form1_Shown(object sender, EventArgs e)
+        {
+            txbIP.Text = socket.GetLocalIPv4(NetworkInterfaceType.Wireless80211);
+
+            if (string.IsNullOrEmpty(txbIP.Text))
+            {
+                txbIP.Text = socket.GetLocalIPv4(NetworkInterfaceType.Ethernet);
+            }
+        }
+
+        private void btnQueue_Click(object sender, EventArgs e)
+        {
+            if (BanCo.QUEUE.Count == 0)
+                return;
+
+            if (tmmophong.Enabled==true)
+            {
+                tmmophong.Enabled = false;
+                btnQueue.Text = "Tiếp tục!";
+            }
+            else
+            {
+                tmmophong.Enabled = true;
+                btnQueue.Text = "Tạm dừng!";
+            }
+        }
     }
 }
 ;

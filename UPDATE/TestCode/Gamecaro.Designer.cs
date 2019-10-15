@@ -152,6 +152,7 @@
             this.btnQueue.TabIndex = 13;
             this.btnQueue.Text = "Mô phỏng lại";
             this.btnQueue.UseVisualStyleBackColor = true;
+            this.btnQueue.Click += new System.EventHandler(this.btnQueue_Click);
             // 
             // btnhuongdan
             // 
@@ -250,6 +251,7 @@
             this.btnLAN.TabIndex = 19;
             this.btnLAN.Text = "Connect to LAN";
             this.btnLAN.UseVisualStyleBackColor = true;
+            this.btnLAN.Click += new System.EventHandler(this.btnLAN_Click);
             // 
             // txbIP
             // 
@@ -258,6 +260,7 @@
             this.txbIP.Name = "txbIP";
             this.txbIP.Size = new System.Drawing.Size(196, 34);
             this.txbIP.TabIndex = 20;
+            this.txbIP.Text = "127.0.0.1";
             // 
             // pcbCountDown
             // 
@@ -295,6 +298,7 @@
             this.Name = "Form1";
             this.Text = "Game Caro";
             this.Load += new System.EventHandler(this.Form1_Load);
+            this.Shown += new System.EventHandler(this.Form1_Shown);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pctbMark)).EndInit();

@@ -71,6 +71,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <Compile Include="SocketManager.cs" />
     <Compile Include="XuLyBanCo.cs" />
     <Compile Include="Cons.cs" />
     <Compile Include="Gamecaro.cs">
