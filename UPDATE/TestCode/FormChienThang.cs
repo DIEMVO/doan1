@@ -10,8 +10,10 @@ using System.Windows.Forms;
 
 namespace GameCaro
 {
+
     public partial class FormChienThang : Form
     {
+
         public FormChienThang()
         {
             InitializeComponent();
@@ -21,11 +23,12 @@ namespace GameCaro
         private void tmdoimau_Tick(object sender, EventArgs e)
         {
             lbchienthang.ForeColor = Color.FromArgb(Random.Next(0, 225), Random.Next(0, 225), Random.Next(0, 225));
+            //đổi màu chữ
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            this.Close();
+            this.Close(); //close
         }
 
         Random Random = new Random();
@@ -38,7 +41,7 @@ namespace GameCaro
 
         private void Form2_Load(object sender, EventArgs e)
         {
-            if (XuLyBanCo.nguoichoihientai == 0)
+            if (XuLyBanCo.nguoichoihientai == 0) //tên người thắng
                 this.tbxname.Text = XuLyBanCo.N2;
             else
                 this.tbxname.Text = XuLyBanCo.N1;
