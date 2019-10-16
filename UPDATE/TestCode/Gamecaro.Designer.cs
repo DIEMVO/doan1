@@ -50,7 +50,7 @@
             this.btntieptuc = new System.Windows.Forms.Button();
             this.btnLAN = new System.Windows.Forms.Button();
             this.txbIP = new System.Windows.Forms.TextBox();
-            this.pcbCountDown = new System.Windows.Forms.ProgressBar();
+            this.tbthoigian = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pctbMark)).BeginInit();
@@ -61,20 +61,18 @@
             this.pnlChessBoard.BackColor = System.Drawing.SystemColors.Control;
             this.pnlChessBoard.ForeColor = System.Drawing.SystemColors.Desktop;
             this.pnlChessBoard.ImeMode = System.Windows.Forms.ImeMode.Disable;
-            this.pnlChessBoard.Location = new System.Drawing.Point(219, 2);
-            this.pnlChessBoard.Margin = new System.Windows.Forms.Padding(4);
+            this.pnlChessBoard.Location = new System.Drawing.Point(164, 2);
             this.pnlChessBoard.Name = "pnlChessBoard";
-            this.pnlChessBoard.Size = new System.Drawing.Size(963, 711);
+            this.pnlChessBoard.Size = new System.Drawing.Size(705, 542);
             this.pnlChessBoard.TabIndex = 0;
             // 
             // NOTE
             // 
             this.NOTE.AutoSize = true;
             this.NOTE.Font = new System.Drawing.Font("Broadway", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.NOTE.Location = new System.Drawing.Point(1216, 424);
-            this.NOTE.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.NOTE.Location = new System.Drawing.Point(877, 361);
             this.NOTE.Name = "NOTE";
-            this.NOTE.Size = new System.Drawing.Size(177, 38);
+            this.NOTE.Size = new System.Drawing.Size(145, 31);
             this.NOTE.TabIndex = 5;
             this.NOTE.Text = "Cờ Ca Rô";
             // 
@@ -83,10 +81,9 @@
             this.txbPlayerName.Enabled = false;
             this.txbPlayerName.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.txbPlayerName.ForeColor = System.Drawing.SystemColors.Desktop;
-            this.txbPlayerName.Location = new System.Drawing.Point(396, 732);
-            this.txbPlayerName.Margin = new System.Windows.Forms.Padding(4);
+            this.txbPlayerName.Location = new System.Drawing.Point(291, 561);
             this.txbPlayerName.Name = "txbPlayerName";
-            this.txbPlayerName.Size = new System.Drawing.Size(253, 34);
+            this.txbPlayerName.Size = new System.Drawing.Size(191, 28);
             this.txbPlayerName.TabIndex = 0;
             // 
             // tmnote
@@ -98,33 +95,38 @@
             // btnnewgame
             // 
             this.btnnewgame.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.btnnewgame.Location = new System.Drawing.Point(12, 688);
-            this.btnnewgame.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnnewgame.Location = new System.Drawing.Point(9, 519);
+            this.btnnewgame.Margin = new System.Windows.Forms.Padding(2);
             this.btnnewgame.Name = "btnnewgame";
-            this.btnnewgame.Size = new System.Drawing.Size(192, 40);
+            this.btnnewgame.Size = new System.Drawing.Size(144, 32);
             this.btnnewgame.TabIndex = 8;
             this.btnnewgame.Text = "NEW GAME!";
             this.btnnewgame.UseVisualStyleBackColor = true;
+            this.btnnewgame.Click += new System.EventHandler(this.btnnewgame_Click);
             // 
             // btnNhacNen
             // 
             this.btnNhacNen.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.btnNhacNen.Location = new System.Drawing.Point(12, 443);
-            this.btnNhacNen.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnNhacNen.Location = new System.Drawing.Point(9, 360);
+            this.btnNhacNen.Margin = new System.Windows.Forms.Padding(2);
             this.btnNhacNen.Name = "btnNhacNen";
-            this.btnNhacNen.Size = new System.Drawing.Size(192, 39);
+            this.btnNhacNen.Size = new System.Drawing.Size(144, 32);
             this.btnNhacNen.TabIndex = 10;
             this.btnNhacNen.Text = "Music ON";
             this.btnNhacNen.UseVisualStyleBackColor = true;
             this.btnNhacNen.Click += new System.EventHandler(this.btnNhacNen_Click);
             // 
+            // tmluatchoi
+            // 
+            this.tmluatchoi.Tick += new System.EventHandler(this.tmluatchoi_Tick);
+            // 
             // btnthoat
             // 
             this.btnthoat.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.btnthoat.Location = new System.Drawing.Point(12, 732);
-            this.btnthoat.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnthoat.Location = new System.Drawing.Point(9, 557);
+            this.btnthoat.Margin = new System.Windows.Forms.Padding(2);
             this.btnthoat.Name = "btnthoat";
-            this.btnthoat.Size = new System.Drawing.Size(192, 40);
+            this.btnthoat.Size = new System.Drawing.Size(144, 32);
             this.btnthoat.TabIndex = 11;
             this.btnthoat.Text = "THOÁT!";
             this.btnthoat.UseVisualStyleBackColor = true;
@@ -133,10 +135,10 @@
             // btnUndo
             // 
             this.btnUndo.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnUndo.Location = new System.Drawing.Point(15, 256);
-            this.btnUndo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnUndo.Location = new System.Drawing.Point(11, 208);
+            this.btnUndo.Margin = new System.Windows.Forms.Padding(2);
             this.btnUndo.Name = "btnUndo";
-            this.btnUndo.Size = new System.Drawing.Size(189, 44);
+            this.btnUndo.Size = new System.Drawing.Size(142, 36);
             this.btnUndo.TabIndex = 12;
             this.btnUndo.Text = "UnDo";
             this.btnUndo.UseVisualStyleBackColor = true;
@@ -145,10 +147,9 @@
             // btnQueue
             // 
             this.btnQueue.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnQueue.Location = new System.Drawing.Point(12, 316);
-            this.btnQueue.Margin = new System.Windows.Forms.Padding(4);
+            this.btnQueue.Location = new System.Drawing.Point(9, 257);
             this.btnQueue.Name = "btnQueue";
-            this.btnQueue.Size = new System.Drawing.Size(192, 43);
+            this.btnQueue.Size = new System.Drawing.Size(144, 35);
             this.btnQueue.TabIndex = 13;
             this.btnQueue.Text = "Mô phỏng lại";
             this.btnQueue.UseVisualStyleBackColor = true;
@@ -157,10 +158,9 @@
             // btnhuongdan
             // 
             this.btnhuongdan.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnhuongdan.Location = new System.Drawing.Point(12, 501);
-            this.btnhuongdan.Margin = new System.Windows.Forms.Padding(4);
+            this.btnhuongdan.Location = new System.Drawing.Point(9, 407);
             this.btnhuongdan.Name = "btnhuongdan";
-            this.btnhuongdan.Size = new System.Drawing.Size(192, 39);
+            this.btnhuongdan.Size = new System.Drawing.Size(144, 32);
             this.btnhuongdan.TabIndex = 14;
             this.btnhuongdan.Text = "Hướng dẫn";
             this.btnhuongdan.UseVisualStyleBackColor = true;
@@ -169,10 +169,10 @@
             // pictureBox2
             // 
             this.pictureBox2.Image = global::TestCode.Properties.Resources.Dr3amyOC;
-            this.pictureBox2.Location = new System.Drawing.Point(13, 4);
-            this.pictureBox2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.pictureBox2.Location = new System.Drawing.Point(10, 3);
+            this.pictureBox2.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(195, 230);
+            this.pictureBox2.Size = new System.Drawing.Size(146, 187);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox2.TabIndex = 7;
             this.pictureBox2.TabStop = false;
@@ -180,10 +180,10 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = global::TestCode.Properties.Resources._1510631098_hibike__euphonium___reina_kousaka_chibi_gif_by_vforvu_d8zc77s;
-            this.pictureBox1.Location = new System.Drawing.Point(1206, 4);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.pictureBox1.Location = new System.Drawing.Point(874, 3);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(197, 230);
+            this.pictureBox1.Size = new System.Drawing.Size(148, 187);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 6;
             this.pictureBox1.TabStop = false;
@@ -192,24 +192,23 @@
             // 
             this.pctbMark.BackColor = System.Drawing.SystemColors.Control;
             this.pctbMark.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pctbMark.Location = new System.Drawing.Point(1225, 256);
-            this.pctbMark.Margin = new System.Windows.Forms.Padding(4);
+            this.pctbMark.Location = new System.Drawing.Point(890, 208);
             this.pctbMark.Name = "pctbMark";
-            this.pctbMark.Size = new System.Drawing.Size(163, 165);
+            this.pctbMark.Size = new System.Drawing.Size(122, 134);
             this.pctbMark.TabIndex = 2;
             this.pctbMark.TabStop = false;
             // 
             // tmmophong
             // 
             this.tmmophong.Interval = 1000;
+            this.tmmophong.Tick += new System.EventHandler(this.tmmophong_Tick_1);
             // 
             // btnChanhaidau
             // 
             this.btnChanhaidau.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnChanhaidau.Location = new System.Drawing.Point(12, 380);
-            this.btnChanhaidau.Margin = new System.Windows.Forms.Padding(4);
+            this.btnChanhaidau.Location = new System.Drawing.Point(9, 309);
             this.btnChanhaidau.Name = "btnChanhaidau";
-            this.btnChanhaidau.Size = new System.Drawing.Size(192, 42);
+            this.btnChanhaidau.Size = new System.Drawing.Size(144, 34);
             this.btnChanhaidau.TabIndex = 15;
             this.btnChanhaidau.Text = "Chặn hai đầu";
             this.btnChanhaidau.UseVisualStyleBackColor = true;
@@ -219,35 +218,43 @@
             // 
             this.Tmthoigian.Enabled = true;
             this.Tmthoigian.Interval = 1000;
+            this.Tmthoigian.Tick += new System.EventHandler(this.Tmthoigian_Tick_1);
             // 
             // btnluuvathoat
             // 
             this.btnluuvathoat.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnluuvathoat.Location = new System.Drawing.Point(12, 597);
-            this.btnluuvathoat.Margin = new System.Windows.Forms.Padding(4);
+            this.btnluuvathoat.Location = new System.Drawing.Point(9, 445);
             this.btnluuvathoat.Name = "btnluuvathoat";
-            this.btnluuvathoat.Size = new System.Drawing.Size(192, 39);
+            this.btnluuvathoat.Size = new System.Drawing.Size(144, 32);
             this.btnluuvathoat.TabIndex = 17;
             this.btnluuvathoat.Text = "Save and Exit";
             this.btnluuvathoat.UseVisualStyleBackColor = true;
+            this.btnluuvathoat.Click += new System.EventHandler(this.btnluuvathoat_Click);
             // 
             // btntieptuc
             // 
             this.btntieptuc.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btntieptuc.Location = new System.Drawing.Point(12, 644);
-            this.btntieptuc.Margin = new System.Windows.Forms.Padding(4);
+            this.btntieptuc.Location = new System.Drawing.Point(11, 483);
             this.btntieptuc.Name = "btntieptuc";
-            this.btntieptuc.Size = new System.Drawing.Size(192, 38);
+            this.btntieptuc.Size = new System.Drawing.Size(144, 31);
             this.btntieptuc.TabIndex = 18;
             this.btntieptuc.Text = "Game đã lưu";
             this.btntieptuc.UseVisualStyleBackColor = true;
+            this.btntieptuc.Click += new System.EventHandler(this.btntieptuc_Click);
             // 
             // btnLAN
             // 
             this.btnLAN.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+<<<<<<< HEAD
             this.btnLAN.Location = new System.Drawing.Point(1206, 617);
             this.btnLAN.Name = "btnLAN";
             this.btnLAN.Size = new System.Drawing.Size(197, 96);
+=======
+            this.btnLAN.Location = new System.Drawing.Point(899, 531);
+            this.btnLAN.Margin = new System.Windows.Forms.Padding(2);
+            this.btnLAN.Name = "btnLAN";
+            this.btnLAN.Size = new System.Drawing.Size(113, 56);
+>>>>>>> b7bb4f8037291f35b5558adbc737759631efcd55
             this.btnLAN.TabIndex = 19;
             this.btnLAN.Text = "Connect to LAN";
             this.btnLAN.UseVisualStyleBackColor = true;
@@ -256,26 +263,34 @@
             // txbIP
             // 
             this.txbIP.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+<<<<<<< HEAD
             this.txbIP.Location = new System.Drawing.Point(1206, 577);
+=======
+            this.txbIP.Location = new System.Drawing.Point(890, 466);
+            this.txbIP.Margin = new System.Windows.Forms.Padding(2);
+>>>>>>> b7bb4f8037291f35b5558adbc737759631efcd55
             this.txbIP.Name = "txbIP";
-            this.txbIP.Size = new System.Drawing.Size(196, 34);
+            this.txbIP.Size = new System.Drawing.Size(122, 28);
             this.txbIP.TabIndex = 20;
             this.txbIP.Text = "127.0.0.1";
             // 
-            // pcbCountDown
+            // tbthoigian
             // 
-            this.pcbCountDown.Location = new System.Drawing.Point(748, 732);
-            this.pcbCountDown.Name = "pcbCountDown";
-            this.pcbCountDown.Size = new System.Drawing.Size(253, 34);
-            this.pcbCountDown.TabIndex = 21;
+            this.tbthoigian.Enabled = false;
+            this.tbthoigian.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.tbthoigian.ForeColor = System.Drawing.SystemColors.Desktop;
+            this.tbthoigian.Location = new System.Drawing.Point(696, 559);
+            this.tbthoigian.Name = "tbthoigian";
+            this.tbthoigian.Size = new System.Drawing.Size(49, 28);
+            this.tbthoigian.TabIndex = 22;
             // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Silver;
-            this.ClientSize = new System.Drawing.Size(1428, 786);
-            this.Controls.Add(this.pcbCountDown);
+            this.ClientSize = new System.Drawing.Size(1028, 583);
+            this.Controls.Add(this.tbthoigian);
             this.Controls.Add(this.txbIP);
             this.Controls.Add(this.btnLAN);
             this.Controls.Add(this.btntieptuc);
@@ -294,7 +309,6 @@
             this.Controls.Add(this.txbPlayerName);
             this.Controls.Add(this.pnlChessBoard);
             this.ForeColor = System.Drawing.SystemColors.Desktop;
-            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Form1";
             this.Text = "Game Caro";
             this.Load += new System.EventHandler(this.Form1_Load);
@@ -330,7 +344,7 @@
         private System.Windows.Forms.Button btntieptuc;
         private System.Windows.Forms.Button btnLAN;
         private System.Windows.Forms.TextBox txbIP;
-        private System.Windows.Forms.ProgressBar pcbCountDown;
+        private System.Windows.Forms.TextBox tbthoigian;
     }
 }
 
