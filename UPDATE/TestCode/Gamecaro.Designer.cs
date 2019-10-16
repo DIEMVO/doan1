@@ -245,9 +245,9 @@
             // btnLAN
             // 
             this.btnLAN.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLAN.Location = new System.Drawing.Point(1206, 645);
+            this.btnLAN.Location = new System.Drawing.Point(1206, 617);
             this.btnLAN.Name = "btnLAN";
-            this.btnLAN.Size = new System.Drawing.Size(197, 68);
+            this.btnLAN.Size = new System.Drawing.Size(197, 96);
             this.btnLAN.TabIndex = 19;
             this.btnLAN.Text = "Connect to LAN";
             this.btnLAN.UseVisualStyleBackColor = true;
@@ -256,7 +256,7 @@
             // txbIP
             // 
             this.txbIP.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txbIP.Location = new System.Drawing.Point(1206, 588);
+            this.txbIP.Location = new System.Drawing.Point(1206, 577);
             this.txbIP.Name = "txbIP";
             this.txbIP.Size = new System.Drawing.Size(196, 34);
             this.txbIP.TabIndex = 20;
