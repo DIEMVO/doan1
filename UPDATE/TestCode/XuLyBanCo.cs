@@ -124,8 +124,7 @@ namespace GameCaro
 		public void VeBanCo()
 		{
 			Matrix = new List<List<Button>>();		//Khởi tạo 2 list lồng nhau
-
-			Button ButtonCu = new Button()
+   			Button ButtonCu = new Button()
 			{
 				Width = 0, Location = new Point(0, 0)   //Khởi tạo nút đầu làm mốc
 			};	
@@ -168,7 +167,6 @@ namespace GameCaro
 
         void btn_Click(object sender, EventArgs e)		//Event click cho button
 		{
-
             win = 0;  
 			Button btn = sender as Button;		//Ép kiểu lại với button
 

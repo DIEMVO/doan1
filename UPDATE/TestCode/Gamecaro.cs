@@ -33,7 +33,7 @@ namespace GameCaro
 
 			BanCo.VeBanCo();
 			NhacNen.Play();
-
+           //lan
             socket = new SocketManager();
 		}
 
@@ -44,8 +44,9 @@ namespace GameCaro
 
         private string nhac = "Music ON";
 		private SoundPlayer NhacNen = new SoundPlayer(@"NhacNen.wav");
+        private int dem;
 
-		private void btnNhacNen_Click(object sender, EventArgs e)
+        private void btnNhacNen_Click(object sender, EventArgs e)
 		{
 			if (sound == 1)
 			{
@@ -105,6 +106,10 @@ namespace GameCaro
                 BanCo.Undo();
             else
                 btnUndo.Enabled = false;
+        }
+        private void Tmthoigian_Tick(object sender, EventArgs e)
+        {
+
         }
 
         private void btnLAN_Click(object sender, EventArgs e)
@@ -171,6 +176,146 @@ namespace GameCaro
             {
                 tmmophong.Enabled = true;
                 btnQueue.Text = "Tạm dừng!";
+            }
+        }
+
+        private void pcbCountDown_Click(object sender, EventArgs e)
+        {
+
+        }
+        private void tmmophong_Tick(object sender, EventArgs e)
+        {
+            
+        }
+        
+        private void btnnewgame_Click(object sender, EventArgs e)
+        {
+            dem = 0;
+            BanCo.Newgame();
+            btnUndo.Enabled = true;
+            XuLyBanCo.win = 0;
+            tmmophong.Enabled = false;
+            btnQueue.Text = "Mô phỏng lại";
+            Tmthoigian.Enabled = true;
+            XuLyBanCo.time = 30;
+            btntieptuc.Enabled = true;
+        }
+
+        private void btnluuvathoat_Click(object sender, EventArgs e)
+        {
+            BanCo.LuuVanCo();
+            StreamWriter write = new StreamWriter("save.txt", false);
+            write.WriteLine(XuLyBanCo.N1);
+            write.WriteLine(XuLyBanCo.N2);
+            write.WriteLine(XuLyBanCo.nguoichoihientai);
+            write.WriteLine(BanCo.QUEUE.Count());
+
+
+            Point p0 = new Point(0, 0);
+            int kt = 0;
+            while (BanCo.QUEUE.Count != 0)
+            {
+                Point P = BanCo.QUEUE.Dequeue();
+                if (p0 == P)
+                    kt = 1;
+                write.WriteLine(P.X);
+                write.WriteLine(P.Y);
+            }
+            write.WriteLine(kt);
+            write.Close();
+            Tmthoigian.Enabled = false;
+
+            MessageBox.Show("Đã lưu ván cờ!", "Thông báo!");
+            Application.Exit();
+        }
+
+        private void btntieptuc_Click(object sender, EventArgs e)
+        {
+            BanCo.XoaBanCo();
+            int x, y;
+            StreamReader read;
+            try
+            {
+                read = new StreamReader("save.txt");
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Không có dữ liệu!", "Thông báo!");
+                return;
+            }
+
+            XuLyBanCo.N1 = read.ReadLine();
+            XuLyBanCo.N2 = read.ReadLine();
+            XuLyBanCo.nguoichoihientai = Convert.ToInt32(read.ReadLine());
+            int sl = Convert.ToInt32(read.ReadLine());
+            BanCo.UpdateName();
+            if (XuLyBanCo.nguoichoihientai == 1)
+                XuLyBanCo.nguoichoihientai = 0;
+            string line;
+            int i = 0;
+            while (i != sl)
+            {
+                i++;
+                line = read.ReadLine();
+                x = Convert.ToInt32(line);
+                line = read.ReadLine();
+                y = Convert.ToInt32(line);
+
+                Point P = new Point(x, y);
+                BanCo.QUEUE.Enqueue(P);
+                BanCo.STACK.Push(P);
+            }
+            int kt = Convert.ToInt32(read.ReadLine());
+            if (kt == 1)
+                BanCo.QUEUE.Dequeue();
+            try
+            {
+                while (BanCo.QUEUE.Count() != 0)
+                {
+                    BanCo.MoPhong();
+                }
+            }
+            catch (Exception)
+            { };
+            btntieptuc.Enabled = false;
+        }
+
+        private void tmluatchoi_Tick(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tmmophong_Tick_1(object sender, EventArgs e)
+        {
+            if (BanCo.QUEUE.Count == 0)
+                return;
+            if (dem == 0 && XuLyBanCo.win == 1)
+            {
+                BanCo.XoaBanCo();
+                dem = 1;
+            }
+            if (XuLyBanCo.win == 1)
+            {
+                BanCo.MoPhong();
+            }
+        }
+
+        private void Tmthoigian_Tick_1(object sender, EventArgs e)
+        {
+            XuLyBanCo.time--;
+            this.tbthoigian.Text = XuLyBanCo.time.ToString();
+
+            if (XuLyBanCo.win == 1)
+                Tmthoigian.Enabled = false;
+
+            if (XuLyBanCo.time == 0)
+            {
+                Tmthoigian.Enabled = false;
+                pnlChessBoard.Enabled = false;
+                BanCo.LuuVanCo();
+                XuLyBanCo.win = 1;
+                FormChienThang f1 = new FormChienThang();
+                f1.Show();
             }
         }
     }
