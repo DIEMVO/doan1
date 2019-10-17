@@ -8,12 +8,13 @@ namespace TestCode
 {
     public class MyStack<T>
     {
+        //tạo stack mới
         private static int MAX = 500;
         private T[] a = new T[MAX];
         private int top = -1;
 
         public int Count = 0;
-        public void Push(T x)
+        public void Push(T x) 
         {
             if (!isFullStack())
             {

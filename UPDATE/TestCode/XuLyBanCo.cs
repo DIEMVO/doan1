@@ -42,7 +42,7 @@ namespace GameCaro
         public static string N1;
 
         public static string N2;
-        public Panel BanCo              
+        public Panel BanCo          //panel    
 		{
 			get { return banco; }
 			set { banco = value; }
@@ -209,7 +209,7 @@ namespace GameCaro
         //Hàm Undo
         public void Undo()
         {
-            Point vitri = STACK.Pop();      //lay vi tri button
+            Point vitri = STACK.Pop();      //lay vi tri button,sd pop lấy vị trí của btn vừa đánh
             Button btn = matrix[vitri.Y][vitri.X];
             btn.BackgroundImage = null;     //Đặt xóa ô đã đánh
 
@@ -257,13 +257,14 @@ namespace GameCaro
 
         public void Newgame()
         {
+            //xóa bàn cờ
             XoaBanCo();
             banco.Enabled = true;
             //Dat lai Queue, Stack
             QUEUE.Clear();
             STACK.Clear();
         }
-        public void XoaBanCo()
+        public void XoaBanCo() //xóa bàn cờ trở về null
         {
             while (Stack2.Count!=0)
             {
@@ -272,7 +273,7 @@ namespace GameCaro
                 btn.BackgroundImage = null;
             }
         }
-        public void UpdateName()
+        public void UpdateName() //cập nhật tên sau mỗi lần đánh
         {
             this.nguoichoi[0].Name = N1;
             this.nguoichoi[1].Name = N2;
@@ -295,14 +296,15 @@ namespace GameCaro
 
             if (NguoiChoiHienTai == 1)      //Sau mỗi lần đánh, đổi người chơi.
             {
-                Amthanh1.Play();
+                Amthanh1.Play(); //âm thanh đánh
                 NguoiChoiHienTai = 0;
             }
+
             else
             {
                 NguoiChoiHienTai = 1;
                 Amthanh2.Play();
-            }
+            } 
         }
 
         private void DoiNguoiChoi()		///Hàm đổi người chơi
@@ -313,7 +315,7 @@ namespace GameCaro
         }
 
 
-        private bool ktHangNgang(Button btn)
+        private bool ktHangNgang(Button btn) //ktra hàng ngang
         {
             Point point = LayViTri(btn);
             int trai, phai;
@@ -321,7 +323,7 @@ namespace GameCaro
             trai = phai = point.X;
 
             //Chạy qua trái
-            while (trai >= 0 && Matrix[point.Y][trai].BackgroundImage == btn.BackgroundImage)
+            while (trai >= 0 && Matrix[point.Y][trai].BackgroundImage == btn.BackgroundImage) //ktra đk
                 trai--;
 
             if (trai < 0 || matrix[point.Y][trai].BackgroundImage == null)
@@ -348,7 +350,7 @@ namespace GameCaro
             len = xuong = point.Y;
 
             //Chạy lên trên
-            while (len >= 0 && matrix[len][point.X].BackgroundImage == btn.BackgroundImage)
+            while (len >= 0 && matrix[len][point.X].BackgroundImage == btn.BackgroundImage) //ktra đk
                 len--;
             if (len < 0 || matrix[len][point.X].BackgroundImage == null)
                 T = 1;
@@ -369,7 +371,7 @@ namespace GameCaro
                 return true;
             return false;
         }
-        private bool ktCheoChinh(Button btn)
+        private bool ktCheoChinh(Button btn) //ktra đường chéo
         {
             Point point = LayViTri(btn);
             int T, D;
@@ -412,6 +414,7 @@ namespace GameCaro
         }
         private bool ktCheoPhu(Button btn)
         {
+
             Point point = LayViTri(btn);
             int T, D;
             int len, xuong, trai, phai;

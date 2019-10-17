@@ -12,6 +12,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using TestCode;
+using static TestCode.SocketData;
 
 namespace GameCaro
 {
@@ -72,12 +73,13 @@ namespace GameCaro
         {
             this.ActiveControl = btnnewgame;
             XuLyBanCo.Chan = 0;
-            XuLyBanCo.time = 30;
+            XuLyBanCo.time = 15;
         }
 
         private void btnhuongdan_Click(object sender, EventArgs e)
         {
             FormHuongDan f = new FormHuongDan();
+
             f.Show();
         }
 
@@ -87,19 +89,19 @@ namespace GameCaro
             {
                 XuLyBanCo.Chan = 1;
                 MessageBox.Show("Đã áp dụng luật chặn hai đầu!");
-                btnChanhaidau.Text = "Hủy luật chặn!";
+                btnChanhaidau.Text = "Hủy luật chặn!!!";
             }
             else
             {
                 XuLyBanCo.Chan = 0;
-                MessageBox.Show("Đã Hủy luật chặn hai đầu!");
-                btnChanhaidau.Text = "Chặn hai đầu!";
+                MessageBox.Show("Đã hủy luật chặn hai đầu!");
+                btnChanhaidau.Text = "Chặn hai đầu!!!";
             }
         }
 
         private void btnUndo_Click(object sender, EventArgs e)
         {
-            XuLyBanCo.time = 30;
+            XuLyBanCo.time = 15;
             if (BanCo.STACK.Count == 0)
                 return;
             if (XuLyBanCo.win == 0)
@@ -119,39 +121,67 @@ namespace GameCaro
             if (!socket.ConnectServer())        //ko thể kết nối server 
             {
                 socket.CreateServer();
+                
             }
             else
             {
-                Thread listenThread = new Thread(() =>
-                {
-                    while (true)
-                    {
-                        Thread.Sleep(500);
-                        try
-                        {
-                            Listen();
-                            break;
-                        }
-                        catch
-                        {
-
-                        }
-                    }
-                });
-                listenThread.IsBackground = true;
-                listenThread.Start();
-
-                socket.Send("Thông tin từ Client..");
+                Listen(); //ngồi đợi
+                
+                //socket.Send(new SocketData((int)SocketCommand.NOTIFY,"Client đã được kết nối"));
             }
         }
 
         void Listen()
         {
-            string data = (string)socket.Receive();
+            
+                Thread listenThread = new Thread(() =>
+                {
+                    try
+                    {
+                        SocketData data = (SocketData)socket.Receive();
+                        ProcessData(data);
+                    }
+                    catch
+                    {
 
-            MessageBox.Show(data);
+                    }
+                    
+                });
+                listenThread.IsBackground = true;
+                listenThread.Start();
+            
+            
+           
         }
+        //hàm processdata
+        private void ProcessData(SocketData data)
+        {
+            switch(data.Command)
+            {
+                case (int)SocketCommand.NOTIFY:
+                    MessageBox.Show(data.Message);
+                    break;
+                case (int)SocketCommand.NEW_GAME:
+                    MessageBox.Show(data.Message);
+                    break;
+                case (int)SocketCommand.SEND_POINT:
+                    MessageBox.Show(data.Message);
+                    break;
+                case (int)SocketCommand.UNDO:
+                    MessageBox.Show(data.Message);
+                    break;
+                case (int)SocketCommand.QUIT:
+                    MessageBox.Show(data.Message);
+                    break;
+                default:
+                    break;
 
+
+
+
+            }
+
+        }
         private void Form1_Shown(object sender, EventArgs e)
         {
             txbIP.Text = socket.GetLocalIPv4(NetworkInterfaceType.Wireless80211);
@@ -161,13 +191,14 @@ namespace GameCaro
                 txbIP.Text = socket.GetLocalIPv4(NetworkInterfaceType.Ethernet);
             }
         }
-
+        
         private void btnQueue_Click(object sender, EventArgs e)
         {
+            //Mô phỏng ván cờ, đổ stack vào stack và ngược lại
             if (BanCo.QUEUE.Count == 0)
                 return;
 
-            if (tmmophong.Enabled==true)
+            if (tmmophong.Enabled==true) 
             {
                 tmmophong.Enabled = false;
                 btnQueue.Text = "Tiếp tục!";
@@ -317,6 +348,7 @@ namespace GameCaro
                 FormChienThang f1 = new FormChienThang();
                 f1.Show();
             }
+
         }
     }
 }
