@@ -4,17 +4,16 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace TestCode
+namespace GameCaro
 {
-    public class MyStack<T>
+    public class MyTack<T>
     {
-        //tạo stack mới
         private static int MAX = 500;
         private T[] a = new T[MAX];
         private int top = -1;
 
         public int Count = 0;
-        public void Push(T x) 
+        public void Push(T x)
         {
             if (!isFullStack())
             {
@@ -24,6 +23,7 @@ namespace TestCode
             }
             return;
         }
+
         public T Pop()
         {
             T t = a[top];
@@ -35,22 +35,26 @@ namespace TestCode
         {
             return this.a[this.top];
         }
+
         public bool isEmpty()
         {
             if (top == -1)
                 return true;
             return false;
         }
+
         public bool isFullStack()
         {
             if (top == MAX - 1)
                 return true;
             return false;
         }
+
         public void Clear()
         {
             top = -1;
             Count = 0;
         }
+
     }
 }

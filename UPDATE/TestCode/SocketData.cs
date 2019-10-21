@@ -7,16 +7,19 @@ using System.Threading.Tasks;
 
 namespace TestCode
 {
+    [Serializable]
+
     public class SocketData
     {
+
         private int command;
         public int Command
         {
             get { return command; }
             set { command = value; }
         }
-        private Point? point;
-        public Point? Point
+        private Point point;
+        public Point Point
         {
             get { return point; }
             set { point = value; }
@@ -27,7 +30,7 @@ namespace TestCode
             get { return message; }
             set { message = value; }
         }
-        public SocketData(int command,string message, Point? point = null)
+        public SocketData(int command, string message, Point point)
         {
             this.Command = command;
             this.Point = point;
@@ -39,6 +42,7 @@ namespace TestCode
             NOTIFY,
             NEW_GAME,
             UNDO,
+            END_GAME,
             QUIT
 
         }

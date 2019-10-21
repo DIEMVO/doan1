@@ -12,7 +12,7 @@ namespace GameCaro
 	{
 		private string name;    // Tên người chơi
         private Image mark;     //Ký hiệu: X or O
-        private SoundPlayer AmThanh; //chèn âm thanh
+        private SoundPlayer AmThanh;
 
         public string Name	
 		{
@@ -31,7 +31,7 @@ namespace GameCaro
 		public Player(string name, Image mark, SoundPlayer amthanh)		//Hàm khởi tạo 1 player
 		{
 			this.Name = name;
-			this.Mark = mark; //ký hiệu
+			this.Mark = mark;
 			this.AmThanh = amthanh;
 		}
 	}

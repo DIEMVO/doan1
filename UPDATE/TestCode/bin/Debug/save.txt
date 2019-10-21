@@ -1,15 +1,9 @@
-d
-t
-1
-5
-3
-6
-4
-6
-4
-7
+First Player
+Second Player
+0
 2
-7
-6
+5
+8
+11
 9
 0

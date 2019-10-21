@@ -54,44 +54,16 @@ C:\Users\kieud\Documents\GitHub\CARO-2-NGUOI\UPDATE2711\UPDATE\TestCode\obj\Debu
 C:\Users\kieud\Documents\GitHub\CARO-2-NGUOI\UPDATE2711\UPDATE\TestCode\obj\Debug\TestCode.csproj.CoreCompileInputs.cache
 C:\Users\kieud\Documents\GitHub\CARO-2-NGUOI\UPDATE2711\UPDATE\TestCode\obj\Debug\TestCode.exe
 C:\Users\kieud\Documents\GitHub\CARO-2-NGUOI\UPDATE2711\UPDATE\TestCode\obj\Debug\TestCode.pdb
-D:\Studying\Năm 3\Đồ án 1\CARO-2-NGUOI - Copy\UPDATE2711\UPDATE\TestCode\obj\Debug\TestCode.csprojAssemblyReference.cache
-D:\Studying\Năm 3\Đồ án 1\CARO-2-NGUOI - Copy\UPDATE2711\UPDATE\TestCode\obj\Debug\GameCaro.Form1.resources
-D:\Studying\Năm 3\Đồ án 1\CARO-2-NGUOI - Copy\UPDATE2711\UPDATE\TestCode\obj\Debug\GameCaro.FormChienThang.resources
-D:\Studying\Năm 3\Đồ án 1\CARO-2-NGUOI - Copy\UPDATE2711\UPDATE\TestCode\obj\Debug\GameCaro.FormHuongDan.resources
-D:\Studying\Năm 3\Đồ án 1\CARO-2-NGUOI - Copy\UPDATE2711\UPDATE\TestCode\obj\Debug\GameCaro.FormNhapthongTin.resources
-D:\Studying\Năm 3\Đồ án 1\CARO-2-NGUOI - Copy\UPDATE2711\UPDATE\TestCode\obj\Debug\GameCaro.FormThoat.resources
-D:\Studying\Năm 3\Đồ án 1\CARO-2-NGUOI - Copy\UPDATE2711\UPDATE\TestCode\obj\Debug\TestCode.Properties.Resources.resources
-D:\Studying\Năm 3\Đồ án 1\CARO-2-NGUOI - Copy\UPDATE2711\UPDATE\TestCode\obj\Debug\TestCode.csproj.GenerateResource.cache
-D:\Studying\Năm 3\Đồ án 1\CARO-2-NGUOI - Copy\UPDATE2711\UPDATE\TestCode\obj\Debug\TestCode.csproj.CoreCompileInputs.cache
-D:\Studying\Năm 3\Đồ án 1\CARO-2-NGUOI - Copy\UPDATE2711\UPDATE\TestCode\obj\Debug\TestCode.exe
-D:\Studying\Năm 3\Đồ án 1\CARO-2-NGUOI - Copy\UPDATE2711\UPDATE\TestCode\obj\Debug\TestCode.pdb
-D:\Studying\Năm 3\Đồ án 1\CARO-2-NGUOI - Copy\UPDATE2711\UPDATE\TestCode\bin\Debug\TestCode.exe.config
-D:\Studying\Năm 3\Đồ án 1\CARO-2-NGUOI - Copy\UPDATE2711\UPDATE\TestCode\bin\Debug\TestCode.exe
-D:\Studying\Năm 3\Đồ án 1\CARO-2-NGUOI - Copy\UPDATE2711\UPDATE\TestCode\bin\Debug\TestCode.pdb
-E:\doan1\UPDATE\TestCode\obj\Debug\TestCode.csprojAssemblyReference.cache
-E:\doan1\UPDATE\TestCode\obj\Debug\GameCaro.Form1.resources
-E:\doan1\UPDATE\TestCode\obj\Debug\GameCaro.FormChienThang.resources
-E:\doan1\UPDATE\TestCode\obj\Debug\GameCaro.FormHuongDan.resources
-E:\doan1\UPDATE\TestCode\obj\Debug\GameCaro.FormNhapthongTin.resources
-E:\doan1\UPDATE\TestCode\obj\Debug\GameCaro.FormThoat.resources
-E:\doan1\UPDATE\TestCode\obj\Debug\TestCode.Properties.Resources.resources
-E:\doan1\UPDATE\TestCode\obj\Debug\TestCode.csproj.GenerateResource.cache
-E:\doan1\UPDATE\TestCode\obj\Debug\TestCode.csproj.CoreCompileInputs.cache
-E:\doan1\UPDATE\TestCode\obj\Debug\TestCode.exe
-E:\doan1\UPDATE\TestCode\obj\Debug\TestCode.pdb
-E:\doan1\UPDATE\TestCode\bin\Debug\TestCode.exe.config
-E:\doan1\UPDATE\TestCode\bin\Debug\TestCode.exe
-E:\doan1\UPDATE\TestCode\bin\Debug\TestCode.pdb
-D:\Studying\Năm 3\Đồ án 1\doan1\UPDATE\TestCode\bin\Debug\TestCode.exe.config
-D:\Studying\Năm 3\Đồ án 1\doan1\UPDATE\TestCode\bin\Debug\TestCode.exe
-D:\Studying\Năm 3\Đồ án 1\doan1\UPDATE\TestCode\bin\Debug\TestCode.pdb
-D:\Studying\Năm 3\Đồ án 1\doan1\UPDATE\TestCode\obj\Debug\TestCode.csprojAssemblyReference.cache
-D:\Studying\Năm 3\Đồ án 1\doan1\UPDATE\TestCode\obj\Debug\GameCaro.Form1.resources
-D:\Studying\Năm 3\Đồ án 1\doan1\UPDATE\TestCode\obj\Debug\GameCaro.FormChienThang.resources
-D:\Studying\Năm 3\Đồ án 1\doan1\UPDATE\TestCode\obj\Debug\GameCaro.FormHuongDan.resources
-D:\Studying\Năm 3\Đồ án 1\doan1\UPDATE\TestCode\obj\Debug\GameCaro.FormNhapthongTin.resources
-D:\Studying\Năm 3\Đồ án 1\doan1\UPDATE\TestCode\obj\Debug\GameCaro.FormThoat.resources
-D:\Studying\Năm 3\Đồ án 1\doan1\UPDATE\TestCode\obj\Debug\TestCode.Properties.Resources.resources
-D:\Studying\Năm 3\Đồ án 1\doan1\UPDATE\TestCode\obj\Debug\TestCode.csproj.GenerateResource.cache
-D:\Studying\Năm 3\Đồ án 1\doan1\UPDATE\TestCode\obj\Debug\TestCode.exe
-D:\Studying\Năm 3\Đồ án 1\doan1\UPDATE\TestCode\obj\Debug\TestCode.pdb
+D:\Studying\Năm 3\Đồ án 1\CARO-2-NGUOI\UPDATE2711\UPDATE\TestCode\bin\Debug\TestCode.exe.config
+D:\Studying\Năm 3\Đồ án 1\CARO-2-NGUOI\UPDATE2711\UPDATE\TestCode\bin\Debug\TestCode.exe
+D:\Studying\Năm 3\Đồ án 1\CARO-2-NGUOI\UPDATE2711\UPDATE\TestCode\bin\Debug\TestCode.pdb
+D:\Studying\Năm 3\Đồ án 1\CARO-2-NGUOI\UPDATE2711\UPDATE\TestCode\obj\Debug\TestCode.csprojAssemblyReference.cache
+D:\Studying\Năm 3\Đồ án 1\CARO-2-NGUOI\UPDATE2711\UPDATE\TestCode\obj\Debug\GameCaro.Form1.resources
+D:\Studying\Năm 3\Đồ án 1\CARO-2-NGUOI\UPDATE2711\UPDATE\TestCode\obj\Debug\GameCaro.FormChienThang.resources
+D:\Studying\Năm 3\Đồ án 1\CARO-2-NGUOI\UPDATE2711\UPDATE\TestCode\obj\Debug\GameCaro.FormHuongDan.resources
+D:\Studying\Năm 3\Đồ án 1\CARO-2-NGUOI\UPDATE2711\UPDATE\TestCode\obj\Debug\GameCaro.FormNhapthongTin.resources
+D:\Studying\Năm 3\Đồ án 1\CARO-2-NGUOI\UPDATE2711\UPDATE\TestCode\obj\Debug\GameCaro.FormThoat.resources
+D:\Studying\Năm 3\Đồ án 1\CARO-2-NGUOI\UPDATE2711\UPDATE\TestCode\obj\Debug\TestCode.Properties.Resources.resources
+D:\Studying\Năm 3\Đồ án 1\CARO-2-NGUOI\UPDATE2711\UPDATE\TestCode\obj\Debug\TestCode.csproj.GenerateResource.cache
+D:\Studying\Năm 3\Đồ án 1\CARO-2-NGUOI\UPDATE2711\UPDATE\TestCode\obj\Debug\TestCode.exe
+D:\Studying\Năm 3\Đồ án 1\CARO-2-NGUOI\UPDATE2711\UPDATE\TestCode\obj\Debug\TestCode.pdb

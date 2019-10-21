@@ -33,7 +33,8 @@ namespace TestCode
         }
         #endregion
 
-        #region Server
+        #region server
+
         Socket server;
         public void CreateServer()
         {
@@ -41,12 +42,11 @@ namespace TestCode
             server = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
 
             server.Bind(iep);
-            server.Listen(10);      //Đợi kết nối với client trong 10s, nếu ko có thì bỏ
+            server.Listen(10);
 
-            //Thread (luồng) sẽ chạy riêng nhằm ko ngốn tài nguyên của ctrinh
             Thread acceptClient = new Thread(() =>
             {
-                client = server.Accept();       //gan client
+                client = server.Accept();
             });
             acceptClient.IsBackground = true;
             acceptClient.Start();
@@ -56,7 +56,7 @@ namespace TestCode
         #region Both
         public string IP = "127.0.0.1";
         public int PORT = 9999;
-        public const int Buffer = 1024;
+        public const int BUFFER = 1024;
         public bool isServer = true;
 
         public bool Send(object data)
@@ -68,8 +68,9 @@ namespace TestCode
 
         public object Receive()
         {
-            byte[] receiveData = new byte[Buffer];
-            bool isOK = ReceiveData(client, receiveData);
+            byte[] receiveData = new byte[BUFFER];
+            bool isOk = ReceiveData(client, receiveData);
+
             return DeserializeData(receiveData);
         }
 
@@ -78,13 +79,13 @@ namespace TestCode
             return target.Send(data) == 1 ? true : false;
         }
 
+
         private bool ReceiveData(Socket target, byte[] data)
         {
             return target.Receive(data) == 1 ? true : false;
         }
-
-        //Nén đối tượng thành mảng byte[]
-        public byte[] SerializeData(object o)
+        /// Nén đối tượng thành mảng byte[]
+        public byte[] SerializeData(Object o)
         {
             MemoryStream ms = new MemoryStream();
             BinaryFormatter bf1 = new BinaryFormatter();
@@ -92,16 +93,16 @@ namespace TestCode
             return ms.ToArray();
         }
 
-        //Giải nén 1 mảng byte thành 1 đối tượng (object)
+        /// Giải nén mảng byte[] thành đối tượng object
         public object DeserializeData(byte[] theByteArray)
         {
-            MemoryStream ms = new MemoryStream();
+            MemoryStream ms = new MemoryStream(theByteArray);
             BinaryFormatter bf1 = new BinaryFormatter();
             ms.Position = 0;
             return bf1.Deserialize(ms);
         }
 
-        //Lấy IPv4 của card mạng đang dùng
+        /// Lấy ra IP V4 của card mạng đang dùng
         public string GetLocalIPv4(NetworkInterfaceType _type)
         {
             string output = "";
@@ -111,7 +112,7 @@ namespace TestCode
                 {
                     foreach (UnicastIPAddressInformation ip in item.GetIPProperties().UnicastAddresses)
                     {
-                        if (ip.Address.AddressFamily== System.Net.Sockets.AddressFamily.InterNetwork)
+                        if (ip.Address.AddressFamily == AddressFamily.InterNetwork)
                         {
                             output = ip.Address.ToString();
                         }
