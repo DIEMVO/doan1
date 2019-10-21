@@ -93,6 +93,5 @@ D:\Studying\Năm 3\Đồ án 1\doan1\UPDATE\TestCode\obj\Debug\GameCaro.FormNhap
 D:\Studying\Năm 3\Đồ án 1\doan1\UPDATE\TestCode\obj\Debug\GameCaro.FormThoat.resources
 D:\Studying\Năm 3\Đồ án 1\doan1\UPDATE\TestCode\obj\Debug\TestCode.Properties.Resources.resources
 D:\Studying\Năm 3\Đồ án 1\doan1\UPDATE\TestCode\obj\Debug\TestCode.csproj.GenerateResource.cache
-D:\Studying\Năm 3\Đồ án 1\doan1\UPDATE\TestCode\obj\Debug\TestCode.csproj.CoreCompileInputs.cache
 D:\Studying\Năm 3\Đồ án 1\doan1\UPDATE\TestCode\obj\Debug\TestCode.exe
 D:\Studying\Năm 3\Đồ án 1\doan1\UPDATE\TestCode\obj\Debug\TestCode.pdb

@@ -109,10 +109,6 @@ namespace GameCaro
             else
                 btnUndo.Enabled = false;
         }
-        private void Tmthoigian_Tick(object sender, EventArgs e)
-        {
-
-        }
 
         private void btnLAN_Click(object sender, EventArgs e)
         {
@@ -133,7 +129,6 @@ namespace GameCaro
 
         void Listen()
         {
-            
                 Thread listenThread = new Thread(() =>
                 {
                     try
@@ -149,9 +144,6 @@ namespace GameCaro
                 });
                 listenThread.IsBackground = true;
                 listenThread.Start();
-            
-            
-           
         }
         //hàm processdata
         private void ProcessData(SocketData data)
@@ -175,10 +167,6 @@ namespace GameCaro
                     break;
                 default:
                     break;
-
-
-
-
             }
 
         }
@@ -213,10 +201,6 @@ namespace GameCaro
         private void pcbCountDown_Click(object sender, EventArgs e)
         {
 
-        }
-        private void tmmophong_Tick(object sender, EventArgs e)
-        {
-            
         }
         
         private void btnnewgame_Click(object sender, EventArgs e)
@@ -350,6 +334,7 @@ namespace GameCaro
             }
 
         }
+
     }
 }
 ;
