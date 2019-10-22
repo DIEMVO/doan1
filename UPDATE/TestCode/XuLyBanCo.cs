@@ -242,12 +242,12 @@ namespace GameCaro
             //Đổi người
             DoiNguoiChoi();
 
-            if (isEndGame(btn))  //Đã có người thắng 
+            if (isEndGame(btn))             //Đã có người thắng 
             {
 
                 BanCo.Enabled = false;      //Vô hiệu hóa bàn cờ
 
-                win = 1;      //Đã kết thúc
+                win = 1;                    //Đã kết thúc
 
                 LuuVanCo();
 
@@ -282,6 +282,7 @@ namespace GameCaro
             }
         }
         //Hàm Undo 
+
         public void Undo()
         {
             Point vitri = STACK.Pop();      // lấy vị trí button

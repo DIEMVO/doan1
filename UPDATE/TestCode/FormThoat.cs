@@ -29,6 +29,7 @@ namespace GameCaro
 
         private void FormThoat_Load(object sender, EventArgs e)
         {
+
         }
     }
 }

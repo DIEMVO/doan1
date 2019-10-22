@@ -49,6 +49,7 @@ namespace GameCaro
 		{
             dem = 0;
             BanCo.Newgame();
+            socket.Send(new SocketData((int)SocketCommand.NEW_GAME, "", new Point()));
             btnUndo.Enabled = true;
             XuLyBanCo.win = 0;
             tmmophong.Enabled = false;
@@ -170,6 +171,7 @@ namespace GameCaro
                 pnlChessBoard.Enabled = false;
                 BanCo.LuuVanCo();
                 XuLyBanCo.win = 1;
+                socket.Send(new SocketData((int)SocketCommand.TIME_OUT, "", new Point()));
                 FormChienThang f1 = new FormChienThang();
                 f1.Show();
             }
@@ -299,7 +301,11 @@ namespace GameCaro
                     MessageBox.Show(data.Message);
                     break;
                 case (int)SocketCommand.NEW_GAME:
-                    MessageBox.Show(data.Message);
+                    this.Invoke((MethodInvoker)(() =>
+                    {
+                        BanCo.Newgame();
+                        pnlChessBoard.Enabled = false;
+                    }));
                     break;
                 case (int)SocketCommand.SEND_POINT:
                     this.Invoke((MethodInvoker)(() =>
@@ -315,10 +321,14 @@ namespace GameCaro
                     MessageBox.Show(data.Message);
                     break;
                 case (int)SocketCommand.END_GAME:
-                    MessageBox.Show(data.Message);
+                    MessageBox.Show("Đã có 5 quân cờ trên cùng 1 hàng");
+                    break;
+                case (int)SocketCommand.TIME_OUT:
+                    MessageBox.Show("Đã hết thời gian");
                     break;
                 case (int)SocketCommand.QUIT:
-                    MessageBox.Show(data.Message);
+                    MessageBox.Show("Người chơi đã thoát!");
+                    Tmthoigian.Stop();
                     break;
                 default:
                     break;
@@ -347,6 +357,21 @@ namespace GameCaro
             Listen();
         }
 
+        private void Form1_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (MessageBox.Show("Bạn có chắc chắn thoát không?", "Thông báo",MessageBoxButtons.OKCancel) != System.Windows.Forms.DialogResult.OK)
+            {
+                e.Cancel = true;
+            }
+            else
+            {
+                try
+                {
+                    socket.Send(new SocketData((int)SocketCommand.QUIT, "", new Point()));
+                }
+                catch { }
+            }
+        }
     }
 }
 ;
