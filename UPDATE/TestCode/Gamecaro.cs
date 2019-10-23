@@ -255,6 +255,17 @@ namespace GameCaro
             { };
             btntieptuc.Enabled = false;
         }
+        void ChessBoard_PlayerMarked(object sender, ButtonClickEvent e)
+        {
+            Tmthoigian.Start();
+
+            pnlChessBoard.Enabled = false;
+
+            prcbCoolDown.Value = 0;
+            socket.Send(new SocketData((int)SocketCommand.SEND_POINT, "", e.ClickedPoint));
+
+            Listen();
+        }
 
         private void btnLAN_Click(object sender, EventArgs e)
         {
@@ -281,6 +292,7 @@ namespace GameCaro
                 try
                 {
                     SocketData data = (SocketData)socket.Receive();
+                    
                     ProcessData(data);
                 }
                 catch (Exception e)
@@ -315,7 +327,7 @@ namespace GameCaro
                         Tmthoigian.Start();
                         BanCo.OtherPlayerMark(data.Point);
 
-                    }));
+                    })); 
                     break;
                 case (int)SocketCommand.UNDO:
                     MessageBox.Show(data.Message);
@@ -345,18 +357,6 @@ namespace GameCaro
                 txbIP.Text = socket.GetLocalIPv4(NetworkInterfaceType.Ethernet);
             }
         }
-        void ChessBoard_PlayerMarked(object sender, ButtonClickEvent e)
-        {
-            Tmthoigian.Start();
-
-            pnlChessBoard.Enabled = false;
-
-            prcbCoolDown.Value = 0;
-            socket.Send(new SocketData((int)SocketCommand.SEND_POINT,"",e.ClickedPoint ));
-
-            Listen();
-        }
-
         private void Form1_FormClosing(object sender, FormClosingEventArgs e)
         {
             if (MessageBox.Show("Bạn có chắc chắn thoát không?", "Thông báo",MessageBoxButtons.OKCancel) != System.Windows.Forms.DialogResult.OK)

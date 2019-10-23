@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using TestCode;
 
 namespace GameCaro
 {
@@ -56,5 +57,9 @@ namespace GameCaro
             Count = 0;
         }
 
+        internal void Push(PlayInfo playInfo)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

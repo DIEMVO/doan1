@@ -66,6 +66,7 @@
       <DependentUpon>FormThoat.cs</DependentUpon>
     </Compile>
     <Compile Include="MyStack.cs" />
+    <Compile Include="PlayInfo.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>

@@ -6,6 +6,7 @@ using System.Media;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using TestCode;
 
 namespace GameCaro
 {
@@ -168,6 +169,32 @@ namespace GameCaro
 			}
 		}
 
+        private event EventHandler<ButtonClickEvent> playerMarked;
+        public event EventHandler<ButtonClickEvent> PlayerMarked
+        {
+            add
+            {
+                playerMarked += value;
+            }
+            remove
+            {
+                playerMarked -= value;
+            }
+        }
+
+        private event EventHandler endedGame;
+        public event EventHandler EndedGame
+        {
+            add
+            {
+                endedGame += value;
+            }
+            remove
+            {
+                endedGame -= value;
+            }
+        }
+
         void btn_Click(object sender, EventArgs e)		//Event click cho button
 		{
 
@@ -216,33 +243,62 @@ namespace GameCaro
         public void OtherPlayerMark(Point point)
         {
 
-            win = 0;
+            //win = 0;
 
+            //Button btn = Matrix[point.Y][point.X];
+
+            //if (btn.BackgroundImage != null)    //Kiểm tra xem button này đã được Click chưa
+            //    return;		//đã được đánh, không được đánh lên nửa
+
+            //Demnuoc++;
+
+            //time = 30;
+
+            //banco.Enabled = true;
+
+            //if (Demnuoc == Cons.Sumbtn)
+            //    MessageBox.Show("Bất phân thắng bại!!!", "Hòa");
+
+            //// Đổi background button theo người đánh
+            //Mark(btn);
+
+            //STACK.Push(LayViTri(btn));      //Add vi tri nut vua nhan vao Stack
+
+            //Stack2.Push(LayViTri(btn));
+
+            ////NguoiChoiHienTai = NguoiChoiHienTai == 1 ? 0 : 1;
+
+            ////Đổi người
+            //DoiNguoiChoi();
+
+            //if (isEndGame(btn))             //Đã có người thắng 
+            //{
+
+            //    BanCo.Enabled = false;      //Vô hiệu hóa bàn cờ
+
+            //    win = 1;                    //Đã kết thúc
+
+            //    LuuVanCo();
+
+            //    //Hiện Form chiến thắng
+            //    FormChienThang f = new FormChienThang();
+            //    f.Show();
+            //}
             Button btn = Matrix[point.Y][point.X];
 
-            if (btn.BackgroundImage != null)    //Kiểm tra xem button này đã được Click chưa
-                return;		//đã được đánh, không được đánh lên nửa
+            if (btn.BackgroundImage != null)
+                return;
 
-            Demnuoc++;
-
-            time = 30;
-
-            banco.Enabled = true;
-
-            if (Demnuoc == Cons.Sumbtn)
-                MessageBox.Show("Bất phân thắng bại!!!", "Hòa");
-
-            // Đổi background button theo người đánh
             Mark(btn);
 
-            STACK.Push(LayViTri(btn));      //Add vi tri nut vua nhan vao Stack
+            STACK.Push(new PlayInfo(LayViTri(btn), NguoiChoiHienTai));      //Add vi tri nut vua nhan vao Stack
 
-            Stack2.Push(LayViTri(btn));
+            NguoiChoiHienTai = NguoiChoiHienTai == 1 ? 0 : 1;
+            //Stack2.Push(LayViTri(btn));
 
-            //Đổi người
             DoiNguoiChoi();
 
-            if (isEndGame(btn))             //Đã có người thắng 
+            if (isEndGame(btn))
             {
 
                 BanCo.Enabled = false;      //Vô hiệu hóa bàn cờ
@@ -254,31 +310,6 @@ namespace GameCaro
                 //Hiện Form chiến thắng
                 FormChienThang f = new FormChienThang();
                 f.Show();
-            }
-        }
-        private event EventHandler<ButtonClickEvent> playerMarked;
-        public event EventHandler<ButtonClickEvent> PlayerMarked
-        {
-            add
-            {
-                playerMarked += value;
-            }
-            remove
-            {
-                playerMarked -= value;
-            }
-        }
-
-        private event EventHandler endedGame;
-        public event EventHandler EndedGame
-        {
-            add
-            {
-                endedGame += value;
-            }
-            remove
-            {
-                endedGame -= value;
             }
         }
         //Hàm Undo 

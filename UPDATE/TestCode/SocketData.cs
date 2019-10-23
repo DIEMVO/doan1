@@ -36,17 +36,15 @@ namespace TestCode
             this.Point = point;
             this.Message = message;
         }
-        public enum SocketCommand //ghi nhớ
-        {
-            SEND_POINT,
-            NOTIFY,
-            NEW_GAME,
-            UNDO,
-            END_GAME,
-            TIME_OUT,
-            QUIT
-
-        }
-
+    }
+    public enum SocketCommand //ghi nhớ
+    {
+        SEND_POINT,
+        NOTIFY,
+        NEW_GAME,
+        UNDO,
+        END_GAME,
+        TIME_OUT,
+        QUIT
     }
 }
