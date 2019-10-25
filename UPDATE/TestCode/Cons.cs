@@ -16,5 +16,7 @@ namespace GameCaro
 		public static int ChieuCaoBC = 19;		// Số ô dọc
 
         public static int Sumbtn = ChieuCaoBC * (ChieuRongBC - 1);  //Tổng số ô
-	}
+
+        public static int COOL_DOWN_INTERVAL = 1000; //tốc độ đếm thời gian
+    }
 }

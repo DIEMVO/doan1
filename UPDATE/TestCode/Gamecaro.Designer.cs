@@ -154,7 +154,7 @@
             this.btnQueue.TabIndex = 13;
             this.btnQueue.Text = "Mô phỏng lại";
             this.btnQueue.UseVisualStyleBackColor = true;
-            this.btnQueue.Click += new System.EventHandler(this.Queue_Click);
+            //this.btnQueue.Click += new System.EventHandler(this.Queue_Click);
             // 
             // btnhuongdan
             // 
@@ -204,7 +204,7 @@
             // tmmophong
             // 
             this.tmmophong.Interval = 1000;
-            this.tmmophong.Tick += new System.EventHandler(this.tmmophong_Tick);
+            //this.tmmophong.Tick += new System.EventHandler(this.tmmophong_Tick);
             // 
             // btnChanhaidau
             // 
@@ -256,7 +256,7 @@
             this.btntieptuc.TabIndex = 18;
             this.btntieptuc.Text = "Game đã lưu";
             this.btntieptuc.UseVisualStyleBackColor = true;
-            this.btntieptuc.Click += new System.EventHandler(this.btntieptuc_Click);
+            //this.btntieptuc.Click += new System.EventHandler(this.btntieptuc_Click);
             // 
             // txbIP
             // 

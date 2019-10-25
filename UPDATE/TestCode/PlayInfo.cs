@@ -19,7 +19,7 @@ namespace TestCode
 
         private int nguoichoihientai;
 
-        public int Nguoichoihientai 
+        public int NguoiChoiHienTai
         { 
             get => nguoichoihientai; 
             set => nguoichoihientai = value; 
@@ -28,7 +28,7 @@ namespace TestCode
         public PlayInfo(Point point, int nguoichoihientai)
         {
             this.Point = point;
-            this.nguoichoihientai = nguoichoihientai;
+            this.NguoiChoiHienTai = nguoichoihientai;
         }
     }
 }

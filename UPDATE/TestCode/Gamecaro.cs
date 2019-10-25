@@ -33,14 +33,33 @@ namespace GameCaro
             Control.CheckForIllegalCrossThreadCalls = false;
 			
             BanCo = new XuLyBanCo(pnlChessBoard, txbPlayerName, pctbMark);
+            BanCo.EndedGame += ChessBoard_Endedgame;
+            BanCo.PlayerMarked += ChessBoard_PlayerMarked;
 
-			BanCo.VeBanCo();
-			NhacNen.Play();
+            Tmthoigian.Interval = Cons.COOL_DOWN_INTERVAL;
 
             socket = new SocketManager();
+
+            NewGame();
+
         }
 
-		private void tmnote_Tick(object sender, EventArgs e)
+        void NewGame()
+        {
+            Tmthoigian.Stop();
+            btnUndo.Enabled = true;
+            BanCo.VeBanCo();
+            NhacNen.Play();
+        }
+
+        void EndGame()
+        {
+            Tmthoigian.Stop();
+            pnlChessBoard.Enabled = false;
+            btnUndo.Enabled = false;
+        }
+
+        private void tmnote_Tick(object sender, EventArgs e)
 		{
 			NOTE.ForeColor = Color.FromArgb(Random.Next(0, 225), Random.Next(0, 225), Random.Next(0, 225));
 		}
@@ -48,15 +67,12 @@ namespace GameCaro
 		private void btnnewgame_Click(object sender, EventArgs e)
 		{
             dem = 0;
-            BanCo.Newgame();
+            NewGame();
             socket.Send(new SocketData((int)SocketCommand.NEW_GAME, "", new Point()));
-            btnUndo.Enabled = true;
             XuLyBanCo.win = 0;
             tmmophong.Enabled = false;
-            btnQueue.Text = "Mô phỏng lại";
             Tmthoigian.Enabled = true;
             XuLyBanCo.time = 30;
-            btntieptuc.Enabled = true;
         }
 
         private string nhac = "Music ON";
@@ -87,12 +103,12 @@ namespace GameCaro
         public void btnUndo_Click(object sender, EventArgs e)
         {
             XuLyBanCo.time = 30;
-            if (BanCo.STACK.Count == 0)
-                return;
-            if (XuLyBanCo.win == 0)
-                BanCo.Undo();
-            else
-                btnUndo.Enabled = false;
+            Undo();
+        }
+
+        void Undo()
+        {
+            BanCo.Undo();
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -103,42 +119,11 @@ namespace GameCaro
         }
 
         int dem = 0;
-        private void Queue_Click(object sender, EventArgs e)
-        {
-            if (BanCo.QUEUE.Count == 0)
-                return;
-
-            if (tmmophong.Enabled == true)
-            {
-                tmmophong.Enabled = false;
-                btnQueue.Text = "Tiếp Tục!";
-            }
-            else
-            {
-                tmmophong.Enabled = true;
-                btnQueue.Text = "Tạm Dừng!";
-            }
-        }
 
         private void btnhuongdan_Click(object sender, EventArgs e)
         {
             FormHuongDan f = new FormHuongDan();
             f.Show();
-        }
-
-        private void tmmophong_Tick(object sender, EventArgs e)
-        {
-            if (BanCo.QUEUE.Count == 0)
-                return;
-            if (dem == 0 && XuLyBanCo.win == 1)
-            {
-                BanCo.Xoabanco();
-                dem = 1;
-            }
-            if (XuLyBanCo.win == 1)
-            {
-                BanCo.MoPhong();
-            }
         }
 
         private void btnChanhaidau_Click(object sender, EventArgs e)
@@ -169,7 +154,7 @@ namespace GameCaro
             {
                 Tmthoigian.Enabled = false;
                 pnlChessBoard.Enabled = false;
-                BanCo.LuuVanCo();
+                //BanCo.LuuVanCo();
                 XuLyBanCo.win = 1;
                 socket.Send(new SocketData((int)SocketCommand.TIME_OUT, "", new Point()));
                 FormChienThang f1 = new FormChienThang();
@@ -179,92 +164,47 @@ namespace GameCaro
 
         private void btnluuvathoat_Click(object sender, EventArgs e)
         {
-            BanCo.LuuVanCo();
+            //BanCo.LuuVanCo();
             StreamWriter write = new StreamWriter("save.txt",false);
             write.WriteLine(XuLyBanCo.N1);
             write.WriteLine(XuLyBanCo.N2);
             write.WriteLine(XuLyBanCo.nguoichoihientai);
-            write.WriteLine(BanCo.QUEUE.Count());
+            //write.WriteLine(BanCo.QUEUE.Count());
 
 
-            Point p0 = new Point(0, 0);
-            int kt = 0;
-            while (BanCo.QUEUE.Count != 0)
-            {
-                Point P = BanCo.QUEUE.Dequeue();
-                if (p0 == P)
-                    kt = 1;
-                write.WriteLine(P.X);
-                write.WriteLine(P.Y);
-            }
-            write.WriteLine(kt);
-            write.Close();
+            //Point p0 = new Point(0, 0);
+            //int kt = 0;
+            //while (BanCo.QUEUE.Count != 0)
+            //{
+            //    Point P = BanCo.QUEUE.Dequeue();
+            //    if (p0 == P)
+            //        kt = 1;
+            //    write.WriteLine(P.X);
+            //    write.WriteLine(P.Y);
+            //}
+            //write.WriteLine(kt);
+            //write.Close();
             Tmthoigian.Enabled = false;
 
             MessageBox.Show("Đã lưu ván cờ!", "Thông báo!");
             Application.Exit();
         }
 
-        private void btntieptuc_Click(object sender, EventArgs e)
-        {
-            BanCo.Xoabanco();
-            int x, y;
-            StreamReader read;
-            try
-            {
-                read = new StreamReader("save.txt"); 
-            }
-            catch (Exception)
-            {
-                MessageBox.Show("Không có dữ liệu!", "Thông báo!");
-                return;
-            }
-
-            XuLyBanCo.N1 = read.ReadLine();
-            XuLyBanCo.N2 = read.ReadLine();
-            XuLyBanCo.nguoichoihientai = Convert.ToInt32(read.ReadLine());
-            int sl = Convert.ToInt32(read.ReadLine());
-            BanCo.UpdateName();
-            if (XuLyBanCo.nguoichoihientai == 1)
-                XuLyBanCo.nguoichoihientai = 0;
-            string line ;
-            int i = 0;
-            while (i != sl)
-            {
-                i++;
-                line = read.ReadLine();
-                x = Convert.ToInt32(line);
-                line = read.ReadLine();
-                y = Convert.ToInt32(line);
-
-                Point P = new Point(x, y);
-                BanCo.QUEUE.Enqueue(P);
-                BanCo.STACK.Push(P);
-            }
-            int kt = Convert.ToInt32(read.ReadLine());
-            if (kt == 1)
-                BanCo.QUEUE.Dequeue();
-            try
-            {
-                while (BanCo.QUEUE.Count() != 0)
-                {
-                    BanCo.MoPhong();
-                }
-            }
-            catch (Exception)
-            { };
-            btntieptuc.Enabled = false;
-        }
         void ChessBoard_PlayerMarked(object sender, ButtonClickEvent e)
         {
             Tmthoigian.Start();
 
             pnlChessBoard.Enabled = false;
 
-            prcbCoolDown.Value = 0;
             socket.Send(new SocketData((int)SocketCommand.SEND_POINT, "", e.ClickedPoint));
+            btnUndo.Enabled = false;
 
             Listen();
+        }
+        void ChessBoard_Endedgame(object sender, EventArgs e)
+        {
+            EndGame();
+            socket.Send(new SocketData((int)SocketCommand.END_GAME, "", new Point()));
         }
 
         private void btnLAN_Click(object sender, EventArgs e)
@@ -315,7 +255,7 @@ namespace GameCaro
                 case (int)SocketCommand.NEW_GAME:
                     this.Invoke((MethodInvoker)(() =>
                     {
-                        BanCo.Newgame();
+                        NewGame();
                         pnlChessBoard.Enabled = false;
                     }));
                     break;
