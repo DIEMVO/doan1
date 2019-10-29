@@ -51,7 +51,6 @@
             this.btntieptuc = new System.Windows.Forms.Button();
             this.txbIP = new System.Windows.Forms.TextBox();
             this.btnLAN = new System.Windows.Forms.Button();
-            this.prcbCoolDown = new System.Windows.Forms.ProgressBar();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pctbMark)).BeginInit();
@@ -154,7 +153,6 @@
             this.btnQueue.TabIndex = 13;
             this.btnQueue.Text = "Mô phỏng lại";
             this.btnQueue.UseVisualStyleBackColor = true;
-            //this.btnQueue.Click += new System.EventHandler(this.Queue_Click);
             // 
             // btnhuongdan
             // 
@@ -204,7 +202,6 @@
             // tmmophong
             // 
             this.tmmophong.Interval = 1000;
-            //this.tmmophong.Tick += new System.EventHandler(this.tmmophong_Tick);
             // 
             // btnChanhaidau
             // 
@@ -256,7 +253,6 @@
             this.btntieptuc.TabIndex = 18;
             this.btntieptuc.Text = "Game đã lưu";
             this.btntieptuc.UseVisualStyleBackColor = true;
-            //this.btntieptuc.Click += new System.EventHandler(this.btntieptuc_Click);
             // 
             // txbIP
             // 
@@ -277,20 +273,12 @@
             this.btnLAN.UseVisualStyleBackColor = true;
             this.btnLAN.Click += new System.EventHandler(this.btnLAN_Click);
             // 
-            // prcbCoolDown
-            // 
-            this.prcbCoolDown.Location = new System.Drawing.Point(949, 734);
-            this.prcbCoolDown.Name = "prcbCoolDown";
-            this.prcbCoolDown.Size = new System.Drawing.Size(233, 36);
-            this.prcbCoolDown.TabIndex = 21;
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Silver;
             this.ClientSize = new System.Drawing.Size(1428, 786);
-            this.Controls.Add(this.prcbCoolDown);
             this.Controls.Add(this.btnLAN);
             this.Controls.Add(this.txbIP);
             this.Controls.Add(this.btntieptuc);
@@ -348,7 +336,6 @@
         private System.Windows.Forms.Button btntieptuc;
         private System.Windows.Forms.TextBox txbIP;
         private System.Windows.Forms.Button btnLAN;
-        private System.Windows.Forms.ProgressBar prcbCoolDown;
     }
 }
 

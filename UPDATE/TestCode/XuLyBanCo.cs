@@ -14,9 +14,13 @@ namespace GameCaro
 	public class XuLyBanCo
 	{
 		// Properties
-		public Panel banco; //Khai báo Panel bàn cờ
+		public Panel banco;	//Khai báo Panel bàn cờ
 
-        public MyTack<PlayInfo> playTimeLine;
+        //public MyTack<Point> STACK;      //Ngăn xếp lưu trữ các vị trí đã đánh để Undo
+
+        //public MyTack<Point> Stack2;     //dùng để clear bàn cờ
+
+        //public Queue<Point> QUEUE;      //Hàng đợi lưu trữ lại các vị trí đã đánh để mô phỏng lại ván cờ
 
         private List<Player> nguoichoi;     //Khai báo một danh sách người chơi
 
@@ -39,6 +43,8 @@ namespace GameCaro
         public static string N1;
 
         public static string N2;
+
+        public MyTack<PlayInfo> playTimeLine;
         public Panel BanCo              
 		{
 			get { return banco; }
@@ -81,6 +87,7 @@ namespace GameCaro
             set { playTimeLine = value; }
         }
 
+
         ////////////////////////////
 
         //Xử lý, khởi tạo
@@ -99,6 +106,10 @@ namespace GameCaro
 				new Player("First Player", Image.FromFile("X.jpg"),Amthanh1),
 				new Player("Second Player", Image.FromFile("O.jpg"),Amthanh2)
 			};
+
+            //Khởi Tạo stack, queue
+
+            PlayTimeLine = new MyTack<PlayInfo>();
 
             //Lấy thông tin tên người chơi từ formNhapThongTin
             FormNhapthongTin f = new FormNhapthongTin();
@@ -122,6 +133,8 @@ namespace GameCaro
 		public void VeBanCo()
 		{
 			Matrix = new List<List<Button>>();		//Khởi tạo 2 list lồng nhau
+
+            PlayTimeLine = new MyTack<PlayInfo>();
 
 			Button ButtonCu = new Button()
 			{
@@ -190,69 +203,50 @@ namespace GameCaro
             }
         }
 
+
+
         void btn_Click(object sender, EventArgs e)		//Event click cho button
 		{
-
-			Button btn = sender as Button;		//Ép kiểu lại với button
-
-			if (btn.BackgroundImage != null)	//Kiểm tra xem button này đã được Click chưa
-				return;		//đã được đánh, không được đánh lên nửa
-
-            Demnuoc++;
-
-            time = 30;
-
-            if (Demnuoc == Cons.Sumbtn)
-                MessageBox.Show("Bất phân thắng bại!!!", "Hòa");
-
-			// Đổi background button theo người đánh
-			Mark(btn);
+            Button btn = sender as Button;
+            if (btn.BackgroundImage != null)
+                return;
+            Mark(btn);
+            //STACK.Push(new PlayInfo(LayViTri(btn), NguoiChoiHienTai));
 
             PlayTimeLine.Push(new PlayInfo(LayViTri(btn), NguoiChoiHienTai));
 
-            //Đổi người
+            NguoiChoiHienTai = NguoiChoiHienTai == 1 ? 0 : 1;
             DoiNguoiChoi();
-
             if (playerMarked != null)
                 playerMarked(this, new ButtonClickEvent(LayViTri(btn)));
-
-			if (isEndGame(btn))  //Đã có người thắng 
-			{
-
-                BanCo.Enabled = false;      //Vô hiệu hóa bàn cờ
-
-                win = 1;      //Đã kết thúc
-                //Hiện Form chiến thắng
-				FormChienThang f = new FormChienThang();
-				f.Show();
-			}
-
+            if (isEndGame(btn))
+            {
+                BanCo.Enabled = false;
+                //win = 1;
+                //LuuVanCo();
+                FormChienThang f = new FormChienThang();
+                f.Show();
+            }
 		}
 
         public void OtherPlayerMark(Point point)
         {
             Button btn = Matrix[point.Y][point.X];
-
             if (btn.BackgroundImage != null)
                 return;
-
             Mark(btn);
+            //STACK.Push(new PlayInfo(LayViTri(btn), NguoiChoiHienTai));
+            //Stack2.Push(new PlayInfo(LayViTri(btn), NguoiChoiHienTai));
 
-            PlayTimeLine.Push(new PlayInfo(LayViTri(btn), NguoiChoiHienTai));      //Add vi tri nut vua nhan vao Stack
+            PlayTimeLine.Push(new PlayInfo(LayViTri(btn), NguoiChoiHienTai));
 
             NguoiChoiHienTai = NguoiChoiHienTai == 1 ? 0 : 1;
-            //Stack2.Push(LayViTri(btn));
-
             DoiNguoiChoi();
-
             if (isEndGame(btn))
             {
-
-                BanCo.Enabled = false;      //Vô hiệu hóa bàn cờ
-
-                win = 1;                    //Đã kết thúc
-
-                //Hiện Form chiến thắng
+                BanCo.Enabled = false;
+                //win = 1;
+                //LuuVanCo();
                 FormChienThang f = new FormChienThang();
                 f.Show();
             }
@@ -273,7 +267,7 @@ namespace GameCaro
                 NguoiChoiHienTai = 1;
             }
             else
-                NguoiChoiHienTai = 0;
+                NguoiChoiHienTai = 0; 
             //NguoiChoiHienTai = oldPoint.Nguoichoihientai == 1 ? 0 : 1;
 
             return isUndo1 && isUndo2;
@@ -302,42 +296,30 @@ namespace GameCaro
             DoiNguoiChoi();
 
             return true;
+
+            //Hàm mô phỏng lại ván cờ
+            //public void MoPhong()
+            //{
+            //    Point vitri = QUEUE.Dequeue();
+            //    Stack2.Push(vitri);
+            //    Button btn = matrix[vitri.Y][vitri.X];
+            //    btn.BackgroundImage = nguoichoi[NguoiChoiHienTai].Mark;
+            //    if (nguoichoihientai == 0)
+            //    {
+            //        NguoiChoiHienTai = 1;
+            //    }
+            //    else
+            //        NguoiChoiHienTai = 0;
+            //    DoiNguoiChoi();
+            //}
         }
-        //    public void LuuVanCo()
-        //{
-        //    Stack<Point> st = new Stack<Point>();
-        //    while (PlayTimeLine.Count != 0)
-        //    {
-        //        st.Push(PlayTimeLine.Pop());
-        //    }
-
-        //    while (st.Count != 0)
-        //    {
-        //        QUEUE.Enqueue(st.Pop());
-        //    }
-        //}
-
-        //Hàm mô phỏng lại ván cờ
-        //public void MoPhong()
-        //{
-        //    Point vitri = QUEUE.Dequeue();
-        //    Stack2.Push(vitri);
-        //    Button btn = matrix[vitri.Y][vitri.X];
-        //    btn.BackgroundImage = nguoichoi[NguoiChoiHienTai].Mark;
-        //    if (nguoichoihientai == 0)
-        //    {
-        //        NguoiChoiHienTai = 1;
-        //    }
-        //    else
-        //        NguoiChoiHienTai = 0;
-        //    DoiNguoiChoi();
-        //}
 
         public void Newgame()
         {
             //Xoabanco();
             banco.Enabled = true;
             //Đặt lại Queue, Stack
+            //QUEUE.Clear();
             PlayTimeLine.Clear();
         }
 
@@ -350,9 +332,9 @@ namespace GameCaro
         //Clear bàn cờ
         //public void Xoabanco()
         //{
-        //    while (Stack2.Count != 0)
+        //    while (PlayTimeLine.Count != 0)
         //    {
-        //        Point vitri = Stack2.Pop();
+        //        //Point vitri = PlayTimeLine.Pop();
         //        Button btn = matrix[vitri.Y][vitri.X];
         //        btn.BackgroundImage = null;
         //    }

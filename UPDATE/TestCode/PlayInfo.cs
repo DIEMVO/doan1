@@ -12,17 +12,18 @@ namespace TestCode
         private Point point;
 
         public Point Point
-        { 
-            get => point;
-            set => point = value;
+        {
+            get { return point; }
+            set { point = value;}
         }
 
         private int nguoichoihientai;
 
-        public int NguoiChoiHienTai
+        public int NguoiChoiHienTai 
         { 
-            get => nguoichoihientai; 
-            set => nguoichoihientai = value; 
+            get { return nguoichoihientai; }
+            
+            set { nguoichoihientai = value; } 
         }
 
         public PlayInfo(Point point, int nguoichoihientai)

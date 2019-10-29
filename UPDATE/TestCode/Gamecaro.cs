@@ -41,9 +41,7 @@ namespace GameCaro
             socket = new SocketManager();
 
             NewGame();
-
         }
-
         void NewGame()
         {
             Tmthoigian.Stop();
@@ -58,21 +56,16 @@ namespace GameCaro
             pnlChessBoard.Enabled = false;
             btnUndo.Enabled = false;
         }
-
-        private void tmnote_Tick(object sender, EventArgs e)
+		private void tmnote_Tick(object sender, EventArgs e)
 		{
 			NOTE.ForeColor = Color.FromArgb(Random.Next(0, 225), Random.Next(0, 225), Random.Next(0, 225));
 		}
 
 		private void btnnewgame_Click(object sender, EventArgs e)
 		{
-            dem = 0;
             NewGame();
             socket.Send(new SocketData((int)SocketCommand.NEW_GAME, "", new Point()));
-            XuLyBanCo.win = 0;
-            tmmophong.Enabled = false;
-            Tmthoigian.Enabled = true;
-            XuLyBanCo.time = 30;
+            pnlChessBoard.Enabled = true;
         }
 
         private string nhac = "Music ON";
@@ -100,15 +93,21 @@ namespace GameCaro
             f.Show();
 		}
 
+        void Undo()
+        {
+            BanCo.Undo();
+        }
+
         public void btnUndo_Click(object sender, EventArgs e)
         {
             XuLyBanCo.time = 30;
             Undo();
-        }
-
-        void Undo()
-        {
-            BanCo.Undo();
+            //if (BanCo.PlayTimeLine.Count == 0)
+            //    return;
+            //if (XuLyBanCo.win == 0)
+            //    BanCo.Undo();
+            //else
+            //    btnUndo.Enabled = false;
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -172,8 +171,8 @@ namespace GameCaro
             //write.WriteLine(BanCo.QUEUE.Count());
 
 
-            //Point p0 = new Point(0, 0);
-            //int kt = 0;
+            Point p0 = new Point(0, 0);
+            int kt = 0;
             //while (BanCo.QUEUE.Count != 0)
             //{
             //    Point P = BanCo.QUEUE.Dequeue();
@@ -182,8 +181,8 @@ namespace GameCaro
             //    write.WriteLine(P.X);
             //    write.WriteLine(P.Y);
             //}
-            //write.WriteLine(kt);
-            //write.Close();
+            write.WriteLine(kt);
+            write.Close();
             Tmthoigian.Enabled = false;
 
             MessageBox.Show("Đã lưu ván cờ!", "Thông báo!");
@@ -198,7 +197,6 @@ namespace GameCaro
 
             socket.Send(new SocketData((int)SocketCommand.SEND_POINT, "", e.ClickedPoint));
             btnUndo.Enabled = false;
-
             Listen();
         }
         void ChessBoard_Endedgame(object sender, EventArgs e)
@@ -262,15 +260,14 @@ namespace GameCaro
                 case (int)SocketCommand.SEND_POINT:
                     this.Invoke((MethodInvoker)(() =>
                     {
-                        prcbCoolDown.Value = 0;
                         pnlChessBoard.Enabled = true;
                         Tmthoigian.Start();
                         BanCo.OtherPlayerMark(data.Point);
-
+                        btnUndo.Enabled = true;
                     })); 
                     break;
                 case (int)SocketCommand.UNDO:
-                    MessageBox.Show(data.Message);
+                    Undo();
                     break;
                 case (int)SocketCommand.END_GAME:
                     MessageBox.Show("Đã có 5 quân cờ trên cùng 1 hàng");
@@ -279,8 +276,8 @@ namespace GameCaro
                     MessageBox.Show("Đã hết thời gian");
                     break;
                 case (int)SocketCommand.QUIT:
-                    MessageBox.Show("Người chơi đã thoát!");
                     Tmthoigian.Stop();
+                    MessageBox.Show("Người chơi đã thoát!");
                     break;
                 default:
                     break;

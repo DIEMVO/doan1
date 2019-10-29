@@ -57,9 +57,9 @@ namespace GameCaro
             Count = 0;
         }
 
-        internal void Push(PlayInfo playInfo)
-        {
-            throw new NotImplementedException();
-        }
+        //internal void Push(PlayInfo playInfo)
+        //{
+        //    throw new NotImplementedException();
+        //}
     }
 }

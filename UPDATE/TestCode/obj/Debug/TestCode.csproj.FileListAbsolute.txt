@@ -80,3 +80,21 @@ D:\Studying\Năm 3\Đồ án 1\doan1\UPDATE\TestCode\obj\Debug\TestCode.Properti
 D:\Studying\Năm 3\Đồ án 1\doan1\UPDATE\TestCode\obj\Debug\TestCode.csproj.GenerateResource.cache
 D:\Studying\Năm 3\Đồ án 1\doan1\UPDATE\TestCode\obj\Debug\TestCode.exe
 D:\Studying\Năm 3\Đồ án 1\doan1\UPDATE\TestCode\obj\Debug\TestCode.pdb
+D:\Studying\Năm 3\Đồ án 1\doan1 - Copy\UPDATE\TestCode\bin\Debug\TestCode.exe.config
+D:\Studying\Năm 3\Đồ án 1\doan1 - Copy\UPDATE\TestCode\bin\Debug\TestCode.exe
+D:\Studying\Năm 3\Đồ án 1\doan1 - Copy\UPDATE\TestCode\bin\Debug\TestCode.pdb
+D:\Studying\Năm 3\Đồ án 1\doan1 - Copy\UPDATE\TestCode\obj\Debug\TestCode.csprojAssemblyReference.cache
+D:\Studying\Năm 3\Đồ án 1\doan1 - Copy\UPDATE\TestCode\obj\Debug\GameCaro.Form1.resources
+D:\Studying\Năm 3\Đồ án 1\doan1 - Copy\UPDATE\TestCode\obj\Debug\GameCaro.FormChienThang.resources
+D:\Studying\Năm 3\Đồ án 1\doan1 - Copy\UPDATE\TestCode\obj\Debug\GameCaro.FormHuongDan.resources
+D:\Studying\Năm 3\Đồ án 1\doan1 - Copy\UPDATE\TestCode\obj\Debug\GameCaro.FormNhapthongTin.resources
+D:\Studying\Năm 3\Đồ án 1\doan1 - Copy\UPDATE\TestCode\obj\Debug\GameCaro.FormThoat.resources
+D:\Studying\Năm 3\Đồ án 1\doan1 - Copy\UPDATE\TestCode\obj\Debug\TestCode.Properties.Resources.resources
+D:\Studying\Năm 3\Đồ án 1\doan1 - Copy\UPDATE\TestCode\obj\Debug\TestCode.csproj.GenerateResource.cache
+D:\Studying\Năm 3\Đồ án 1\doan1 - Copy\UPDATE\TestCode\obj\Debug\TestCode.exe
+D:\Studying\Năm 3\Đồ án 1\doan1 - Copy\UPDATE\TestCode\obj\Debug\TestCode.pdb
+D:\Studying\Năm 3\Đồ án 1\doan1 - Copy\UPDATE\TestCode\bin\Debug\EntityFramework.dll
+D:\Studying\Năm 3\Đồ án 1\doan1 - Copy\UPDATE\TestCode\bin\Debug\EntityFramework.SqlServer.dll
+D:\Studying\Năm 3\Đồ án 1\doan1 - Copy\UPDATE\TestCode\bin\Debug\EntityFramework.xml
+D:\Studying\Năm 3\Đồ án 1\doan1 - Copy\UPDATE\TestCode\bin\Debug\EntityFramework.SqlServer.xml
+D:\Studying\Năm 3\Đồ án 1\doan1 - Copy\UPDATE\TestCode\obj\Debug\TestCode.csproj.CopyComplete
