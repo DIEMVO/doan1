@@ -27,15 +27,22 @@ namespace GameCaro
         {
             Name11 = Name1.Text;
             Name21 = Name2.Text;
-
+            
             Form1 f = new Form1();
             f.Show();
+            
         }
-
+        
         private void FormNhapthongTin_Load(object sender, EventArgs e)
         {
             this.ActiveControl = this.Name1;
         }
 
+        private void btnClose_Click(object sender, EventArgs e)
+        {
+            FormNhapthongTin ftt = new FormNhapthongTin();
+
+            ftt.Close();
+        }
     }
 }

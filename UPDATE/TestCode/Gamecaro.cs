@@ -33,18 +33,32 @@ namespace GameCaro
             Control.CheckForIllegalCrossThreadCalls = false;
 			
             BanCo = new XuLyBanCo(pnlChessBoard, txbPlayerName, pctbMark);
+            BanCo.EndedGame += BanCo_EndedGame;
+            //Thêm sự kiện cho pannel và thược tính cho timer
+            pcbCoolDown.Step = Cons.COOL_DOWN_STEP;
+            pcbCoolDown.Maximum = Cons.COOL_DOWN_TIME;
+            pcbCoolDown.Value = 0; //giá trị ban đầu
+
+            tmCoolDown.Interval = Cons.COOL_DOWN_INTERVAL;
             BanCo.EndedGame += ChessBoard_Endedgame;
             BanCo.PlayerMarked += ChessBoard_PlayerMarked;
-
-            Tmthoigian.Interval = Cons.COOL_DOWN_INTERVAL;
+            //tmCoolDown.Start(); //1/10s(100) thì chạy
+            //Tmthoigian.Interval = Cons.COOL_DOWN_INTERVAL;
 
             socket = new SocketManager();
 
             NewGame();
         }
+
+        private void BanCo_EndedGame(object sender, EventArgs e)
+        {
+            throw new NotImplementedException();
+        }
+
         void NewGame()
         {
-            Tmthoigian.Stop();
+            pcbCoolDown.Value = 0;
+            tmCoolDown.Stop();
             btnUndo.Enabled = true;
             BanCo.VeBanCo();
             NhacNen.Play();
@@ -52,7 +66,7 @@ namespace GameCaro
 
         void EndGame()
         {
-            Tmthoigian.Stop();
+            tmCoolDown.Stop();
             pnlChessBoard.Enabled = false;
             btnUndo.Enabled = false;
         }
@@ -96,11 +110,12 @@ namespace GameCaro
         void Undo()
         {
             BanCo.Undo();
+            pcbCoolDown.Value = 0;
         }
 
         public void btnUndo_Click(object sender, EventArgs e)
         {
-            XuLyBanCo.time = 30;
+           // XuLyBanCo.time = 30;
             Undo();
             //if (BanCo.PlayTimeLine.Count == 0)
             //    return;
@@ -114,7 +129,7 @@ namespace GameCaro
         {
             this.ActiveControl = btnnewgame;
             XuLyBanCo.Chan = 0;
-            XuLyBanCo.time = 30;
+            //XuLyBanCo.time = 30;
         }
 
         int dem = 0;
@@ -143,22 +158,22 @@ namespace GameCaro
 
         private void Tmthoigian_Tick(object sender, EventArgs e)
         {
-            XuLyBanCo.time--;
-            this.tbxthoigian.Text = XuLyBanCo.time.ToString();
+            //XuLyBanCo.time--;
+            //this.tbxthoigian.Text = XuLyBanCo.time.ToString();
 
-            if (XuLyBanCo.win == 1)
-                Tmthoigian.Enabled = false;
+            //if (XuLyBanCo.win == 1)
+            //    Tmthoigian.Enabled = false;
 
-            if (XuLyBanCo.time == 0)
-            {
-                Tmthoigian.Enabled = false;
-                pnlChessBoard.Enabled = false;
-                //BanCo.LuuVanCo();
-                XuLyBanCo.win = 1;
-                socket.Send(new SocketData((int)SocketCommand.TIME_OUT, "", new Point()));
-                FormChienThang f1 = new FormChienThang();
-                f1.Show();
-            }
+            //if (XuLyBanCo.time == 0)
+            //{
+            //    Tmthoigian.Enabled = false;
+            //    pnlChessBoard.Enabled = false;
+            //    //BanCo.LuuVanCo();
+            //    XuLyBanCo.win = 1;
+            //    socket.Send(new SocketData((int)SocketCommand.TIME_OUT, "", new Point()));
+            //    FormChienThang f1 = new FormChienThang();
+            //    f1.Show();
+            //}
         }
 
         private void btnluuvathoat_Click(object sender, EventArgs e)
@@ -191,10 +206,10 @@ namespace GameCaro
 
         void ChessBoard_PlayerMarked(object sender, ButtonClickEvent e)
         {
-            Tmthoigian.Start();
-
+           tmCoolDown.Start();
+            
             pnlChessBoard.Enabled = false;
-
+            pcbCoolDown.Value = 0;
             socket.Send(new SocketData((int)SocketCommand.SEND_POINT, "", e.ClickedPoint));
             btnUndo.Enabled = false;
             Listen();
@@ -260,14 +275,18 @@ namespace GameCaro
                 case (int)SocketCommand.SEND_POINT:
                     this.Invoke((MethodInvoker)(() =>
                     {
+                        pcbCoolDown.Value = 0;
                         pnlChessBoard.Enabled = true;
-                        Tmthoigian.Start();
+                        tmCoolDown.Start();
+                        //Tmthoigian.Start();
                         BanCo.OtherPlayerMark(data.Point);
+                        //Tmthoigian.Start();
                         btnUndo.Enabled = true;
                     })); 
                     break;
                 case (int)SocketCommand.UNDO:
                     Undo();
+                    pcbCoolDown.Value = 0;
                     break;
                 case (int)SocketCommand.END_GAME:
                     MessageBox.Show("Đã có 5 quân cờ trên cùng 1 hàng");
@@ -276,7 +295,7 @@ namespace GameCaro
                     MessageBox.Show("Đã hết thời gian");
                     break;
                 case (int)SocketCommand.QUIT:
-                    Tmthoigian.Stop();
+                    tmCoolDown.Stop();
                     MessageBox.Show("Người chơi đã thoát!");
                     break;
                 default:
@@ -296,6 +315,7 @@ namespace GameCaro
         }
         private void Form1_FormClosing(object sender, FormClosingEventArgs e)
         {
+            
             if (MessageBox.Show("Bạn có chắc chắn thoát không?", "Thông báo",MessageBoxButtons.OKCancel) != System.Windows.Forms.DialogResult.OK)
             {
                 e.Cancel = true;
@@ -308,6 +328,24 @@ namespace GameCaro
                 }
                 catch { }
             }
+        }
+
+        private void pcbCoolDown_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tmCoolDown_Tick(object sender, EventArgs e)
+        {
+            pcbCoolDown.PerformStep(); //mỗi lần tick khởi động performstep 
+        if(pcbCoolDown.Value >= pcbCoolDown.Maximum)
+            {
+                
+                
+                EndGame();
+                socket.Send(new SocketData((int)SocketCommand.TIME_OUT, "", new Point()));
+            }
+
         }
     }
 }

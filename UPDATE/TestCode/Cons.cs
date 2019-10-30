@@ -17,6 +17,8 @@ namespace GameCaro
 
         public static int Sumbtn = ChieuCaoBC * (ChieuRongBC - 1);  //Tổng số ô
 
-        public static int COOL_DOWN_INTERVAL = 1000;
+        public static int COOL_DOWN_STEP = 100;  //càng nhỏ càng mượt
+        public static int COOL_DOWN_INTERVAL = 100;  //thời gian pcb tăng
+        public static int COOL_DOWN_TIME = 10000;  //thời gian kết thúc
 	}
 }
