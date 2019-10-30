@@ -223,13 +223,16 @@ namespace GameCaro
                 playerMarked(this, new ButtonClickEvent(LayViTri(btn)));
             if (isEndGame(btn))
             {
+               
                 BanCo.Enabled = false;
                 //phần đếm thời gian
-                EndGame();
+                ////EndGame();
                 //win = 1;
                 //LuuVanCo();
+
                 FormChienThang f = new FormChienThang();
                 f.Show();
+                EndGame();
             }
             
 		}
@@ -249,11 +252,14 @@ namespace GameCaro
             DoiNguoiChoi();
             if (isEndGame(btn))
             {
+                
                 BanCo.Enabled = false;
                 //win = 1;
                 //LuuVanCo();
+
                 FormChienThang f = new FormChienThang();
                 f.Show();
+                EndGame();
             }
         }
         //Hàm Undo 

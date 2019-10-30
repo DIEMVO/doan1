@@ -33,15 +33,15 @@ namespace GameCaro
             Control.CheckForIllegalCrossThreadCalls = false;
 			
             BanCo = new XuLyBanCo(pnlChessBoard, txbPlayerName, pctbMark);
-            BanCo.EndedGame += BanCo_EndedGame;
+            BanCo.EndedGame += ChessBoard_Endedgame;
+            BanCo.PlayerMarked += ChessBoard_PlayerMarked;
             //Thêm sự kiện cho pannel và thược tính cho timer
             pcbCoolDown.Step = Cons.COOL_DOWN_STEP;
             pcbCoolDown.Maximum = Cons.COOL_DOWN_TIME;
             pcbCoolDown.Value = 0; //giá trị ban đầu
 
             tmCoolDown.Interval = Cons.COOL_DOWN_INTERVAL;
-            BanCo.EndedGame += ChessBoard_Endedgame;
-            BanCo.PlayerMarked += ChessBoard_PlayerMarked;
+           
             //tmCoolDown.Start(); //1/10s(100) thì chạy
             //Tmthoigian.Interval = Cons.COOL_DOWN_INTERVAL;
 
@@ -289,10 +289,11 @@ namespace GameCaro
                     pcbCoolDown.Value = 0;
                     break;
                 case (int)SocketCommand.END_GAME:
-                    MessageBox.Show("Đã có 5 quân cờ trên cùng 1 hàng");
+                    FormChienThang f = new FormChienThang();
+                    f.Show();
                     break;
                 case (int)SocketCommand.TIME_OUT:
-                    MessageBox.Show("Đã hết thời gian");
+                    MessageBox.Show("Đã hết giờ!!!");
                     break;
                 case (int)SocketCommand.QUIT:
                     tmCoolDown.Stop();
