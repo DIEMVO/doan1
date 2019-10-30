@@ -19,7 +19,7 @@ namespace TestCode.Properties {
     // class via a tool like ResGen or Visual Studio.
     // To add or remove a member, edit your .ResX file then rerun ResGen
     // with the /str option, or rebuild your VS project.
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "15.0.0.0")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "16.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     internal class Resources {
@@ -63,6 +63,16 @@ namespace TestCode.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap _10730 {
+            get {
+                object obj = ResourceManager.GetObject("10730", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap _1510631098_hibike__euphonium___reina_kousaka_chibi_gif_by_vforvu_d8zc77s {
             get {
                 object obj = ResourceManager.GetObject("1510631098_hibike__euphonium___reina_kousaka_chibi_gif_by_vforvu-d8zc77s", resourceCulture);
@@ -83,9 +93,39 @@ namespace TestCode.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap AW439657_14 {
+            get {
+                object obj = ResourceManager.GetObject("AW439657_14", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap bf0d85d3e1bee380ee95b950e34955ae {
+            get {
+                object obj = ResourceManager.GetObject("bf0d85d3e1bee380ee95b950e34955ae", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Dr3amyOC {
             get {
                 object obj = ResourceManager.GetObject("Dr3amyOC", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap giphy__2_ {
+            get {
+                object obj = ResourceManager.GetObject("giphy (2)", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
