@@ -105,6 +105,7 @@
             this.Controls.Add(this.label1);
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "FormNhapthongTin";
+            this.Text = "Nhập thông tin người chơi";
             this.Load += new System.EventHandler(this.FormNhapthongTin_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

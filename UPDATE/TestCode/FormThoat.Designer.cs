@@ -43,7 +43,7 @@
             this.label1.ForeColor = System.Drawing.SystemColors.Desktop;
             this.label1.Location = new System.Drawing.Point(33, 18);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(437, 39);
+            this.label1.Size = new System.Drawing.Size(426, 38);
             this.label1.TabIndex = 0;
             this.label1.Text = "Bạn có muốn thoát không???";
             // 
@@ -98,7 +98,7 @@
             this.Controls.Add(this.label1);
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "FormThoat";
-            this.Text = "FormThoat";
+            this.Text = "Thoát";
             this.Load += new System.EventHandler(this.FormThoat_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);

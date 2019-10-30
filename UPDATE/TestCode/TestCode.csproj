@@ -159,6 +159,24 @@
   <ItemGroup>
     <None Include="Resources\3.jpg" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\AW439657_14.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bf0d85d3e1bee380ee95b950e34955ae.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\10730.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\giphy %282%29.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\giphy.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\giphy %281%29.gif" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>

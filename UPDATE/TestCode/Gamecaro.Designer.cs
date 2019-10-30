@@ -38,21 +38,17 @@
             this.tmluatchoi = new System.Windows.Forms.Timer(this.components);
             this.btnthoat = new System.Windows.Forms.Button();
             this.btnUndo = new System.Windows.Forms.Button();
-            this.btnQueue = new System.Windows.Forms.Button();
             this.btnhuongdan = new System.Windows.Forms.Button();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.pctbMark = new System.Windows.Forms.PictureBox();
             this.tmmophong = new System.Windows.Forms.Timer(this.components);
             this.btnChanhaidau = new System.Windows.Forms.Button();
             this.Tmthoigian = new System.Windows.Forms.Timer(this.components);
-            this.tbxthoigian = new System.Windows.Forms.TextBox();
-            this.btnluuvathoat = new System.Windows.Forms.Button();
-            this.btntieptuc = new System.Windows.Forms.Button();
             this.txbIP = new System.Windows.Forms.TextBox();
             this.btnLAN = new System.Windows.Forms.Button();
             this.pcbCoolDown = new System.Windows.Forms.ProgressBar();
             this.tmCoolDown = new System.Windows.Forms.Timer(this.components);
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.pctbMark = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pctbMark)).BeginInit();
@@ -63,29 +59,32 @@
             this.pnlChessBoard.BackColor = System.Drawing.SystemColors.Control;
             this.pnlChessBoard.ForeColor = System.Drawing.SystemColors.Desktop;
             this.pnlChessBoard.ImeMode = System.Windows.Forms.ImeMode.Disable;
-            this.pnlChessBoard.Location = new System.Drawing.Point(164, 2);
+            this.pnlChessBoard.Location = new System.Drawing.Point(219, 2);
+            this.pnlChessBoard.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pnlChessBoard.Name = "pnlChessBoard";
-            this.pnlChessBoard.Size = new System.Drawing.Size(722, 578);
+            this.pnlChessBoard.Size = new System.Drawing.Size(963, 711);
             this.pnlChessBoard.TabIndex = 0;
             // 
             // NOTE
             // 
             this.NOTE.AutoSize = true;
             this.NOTE.Font = new System.Drawing.Font("Broadway", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.NOTE.Location = new System.Drawing.Point(906, 355);
+            this.NOTE.Location = new System.Drawing.Point(1210, 434);
+            this.NOTE.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.NOTE.Name = "NOTE";
-            this.NOTE.Size = new System.Drawing.Size(145, 31);
+            this.NOTE.Size = new System.Drawing.Size(177, 38);
             this.NOTE.TabIndex = 5;
             this.NOTE.Text = "Cờ Ca Rô";
             // 
             // txbPlayerName
             // 
             this.txbPlayerName.Enabled = false;
-            this.txbPlayerName.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.txbPlayerName.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.txbPlayerName.ForeColor = System.Drawing.SystemColors.Desktop;
-            this.txbPlayerName.Location = new System.Drawing.Point(340, 592);
+            this.txbPlayerName.Location = new System.Drawing.Point(363, 729);
+            this.txbPlayerName.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txbPlayerName.Name = "txbPlayerName";
-            this.txbPlayerName.Size = new System.Drawing.Size(191, 35);
+            this.txbPlayerName.Size = new System.Drawing.Size(253, 42);
             this.txbPlayerName.TabIndex = 0;
             // 
             // tmnote
@@ -96,104 +95,68 @@
             // 
             // btnnewgame
             // 
-            this.btnnewgame.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.btnnewgame.Location = new System.Drawing.Point(12, 485);
-            this.btnnewgame.Margin = new System.Windows.Forms.Padding(2);
+            this.btnnewgame.BackColor = System.Drawing.Color.PeachPuff;
+            this.btnnewgame.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.btnnewgame.Location = new System.Drawing.Point(15, 675);
+            this.btnnewgame.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnnewgame.Name = "btnnewgame";
-            this.btnnewgame.Size = new System.Drawing.Size(144, 28);
+            this.btnnewgame.Size = new System.Drawing.Size(192, 42);
             this.btnnewgame.TabIndex = 8;
-            this.btnnewgame.Text = "NEW GAME!";
-            this.btnnewgame.UseVisualStyleBackColor = true;
+            this.btnnewgame.Text = "NEW GAME";
+            this.btnnewgame.UseVisualStyleBackColor = false;
             this.btnnewgame.Click += new System.EventHandler(this.btnnewgame_Click);
             // 
             // btnNhacNen
             // 
-            this.btnNhacNen.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.btnNhacNen.Location = new System.Drawing.Point(14, 286);
-            this.btnNhacNen.Margin = new System.Windows.Forms.Padding(2);
+            this.btnNhacNen.BackColor = System.Drawing.Color.PeachPuff;
+            this.btnNhacNen.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.btnNhacNen.Location = new System.Drawing.Point(15, 621);
+            this.btnNhacNen.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnNhacNen.Name = "btnNhacNen";
-            this.btnNhacNen.Size = new System.Drawing.Size(146, 28);
+            this.btnNhacNen.Size = new System.Drawing.Size(192, 40);
             this.btnNhacNen.TabIndex = 10;
             this.btnNhacNen.Text = "Music ON";
-            this.btnNhacNen.UseVisualStyleBackColor = true;
+            this.btnNhacNen.UseVisualStyleBackColor = false;
             this.btnNhacNen.Click += new System.EventHandler(this.btnNhacNen_Click);
             // 
             // btnthoat
             // 
-            this.btnthoat.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.btnthoat.Location = new System.Drawing.Point(11, 592);
-            this.btnthoat.Margin = new System.Windows.Forms.Padding(2);
+            this.btnthoat.BackColor = System.Drawing.Color.PeachPuff;
+            this.btnthoat.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.btnthoat.Location = new System.Drawing.Point(15, 729);
+            this.btnthoat.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnthoat.Name = "btnthoat";
-            this.btnthoat.Size = new System.Drawing.Size(144, 33);
+            this.btnthoat.Size = new System.Drawing.Size(192, 41);
             this.btnthoat.TabIndex = 11;
-            this.btnthoat.Text = "THOÁT!";
-            this.btnthoat.UseVisualStyleBackColor = true;
+            this.btnthoat.Text = "THOÁT";
+            this.btnthoat.UseVisualStyleBackColor = false;
             this.btnthoat.Click += new System.EventHandler(this.btnthoat_Click);
             // 
             // btnUndo
             // 
-            this.btnUndo.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnUndo.Location = new System.Drawing.Point(11, 217);
-            this.btnUndo.Margin = new System.Windows.Forms.Padding(2);
+            this.btnUndo.BackColor = System.Drawing.Color.PeachPuff;
+            this.btnUndo.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnUndo.Location = new System.Drawing.Point(15, 294);
+            this.btnUndo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnUndo.Name = "btnUndo";
-            this.btnUndo.Size = new System.Drawing.Size(148, 30);
+            this.btnUndo.Size = new System.Drawing.Size(192, 37);
             this.btnUndo.TabIndex = 12;
-            this.btnUndo.Text = "UnDo";
-            this.btnUndo.UseVisualStyleBackColor = true;
+            this.btnUndo.Text = "UNDO";
+            this.btnUndo.UseVisualStyleBackColor = false;
             this.btnUndo.Click += new System.EventHandler(this.btnUndo_Click);
-            // 
-            // btnQueue
-            // 
-            this.btnQueue.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnQueue.Location = new System.Drawing.Point(13, 252);
-            this.btnQueue.Name = "btnQueue";
-            this.btnQueue.Size = new System.Drawing.Size(147, 29);
-            this.btnQueue.TabIndex = 13;
-            this.btnQueue.Text = "Mô phỏng lại";
-            this.btnQueue.UseVisualStyleBackColor = true;
             // 
             // btnhuongdan
             // 
-            this.btnhuongdan.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnhuongdan.Location = new System.Drawing.Point(912, 581);
+            this.btnhuongdan.BackColor = System.Drawing.Color.PeachPuff;
+            this.btnhuongdan.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnhuongdan.Location = new System.Drawing.Point(1202, 715);
+            this.btnhuongdan.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnhuongdan.Name = "btnhuongdan";
-            this.btnhuongdan.Size = new System.Drawing.Size(139, 45);
+            this.btnhuongdan.Size = new System.Drawing.Size(196, 55);
             this.btnhuongdan.TabIndex = 14;
             this.btnhuongdan.Text = "Hướng dẫn";
-            this.btnhuongdan.UseVisualStyleBackColor = true;
+            this.btnhuongdan.UseVisualStyleBackColor = false;
             this.btnhuongdan.Click += new System.EventHandler(this.btnhuongdan_Click);
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Image = global::TestCode.Properties.Resources.Dr3amyOC;
-            this.pictureBox2.Location = new System.Drawing.Point(13, 3);
-            this.pictureBox2.Margin = new System.Windows.Forms.Padding(2);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(146, 187);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox2.TabIndex = 7;
-            this.pictureBox2.TabStop = false;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::TestCode.Properties.Resources._1510631098_hibike__euphonium___reina_kousaka_chibi_gif_by_vforvu_d8zc77s;
-            this.pictureBox1.Location = new System.Drawing.Point(892, 3);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(148, 187);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 6;
-            this.pictureBox1.TabStop = false;
-            // 
-            // pctbMark
-            // 
-            this.pctbMark.BackColor = System.Drawing.SystemColors.Control;
-            this.pctbMark.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pctbMark.Location = new System.Drawing.Point(912, 208);
-            this.pctbMark.Name = "pctbMark";
-            this.pctbMark.Size = new System.Drawing.Size(122, 134);
-            this.pctbMark.TabIndex = 2;
-            this.pctbMark.TabStop = false;
             // 
             // tmmophong
             // 
@@ -201,13 +164,15 @@
             // 
             // btnChanhaidau
             // 
-            this.btnChanhaidau.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnChanhaidau.Location = new System.Drawing.Point(15, 318);
+            this.btnChanhaidau.BackColor = System.Drawing.Color.PeachPuff;
+            this.btnChanhaidau.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnChanhaidau.Location = new System.Drawing.Point(15, 349);
+            this.btnChanhaidau.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnChanhaidau.Name = "btnChanhaidau";
-            this.btnChanhaidau.Size = new System.Drawing.Size(144, 31);
+            this.btnChanhaidau.Size = new System.Drawing.Size(192, 41);
             this.btnChanhaidau.TabIndex = 15;
             this.btnChanhaidau.Text = "Chặn hai đầu";
-            this.btnChanhaidau.UseVisualStyleBackColor = true;
+            this.btnChanhaidau.UseVisualStyleBackColor = false;
             this.btnChanhaidau.Click += new System.EventHandler(this.btnChanhaidau_Click);
             // 
             // Tmthoigian
@@ -216,62 +181,36 @@
             this.Tmthoigian.Interval = 1000;
             this.Tmthoigian.Tick += new System.EventHandler(this.Tmthoigian_Tick);
             // 
-            // tbxthoigian
-            // 
-            this.tbxthoigian.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbxthoigian.ForeColor = System.Drawing.SystemColors.Desktop;
-            this.tbxthoigian.Location = new System.Drawing.Point(656, 592);
-            this.tbxthoigian.Name = "tbxthoigian";
-            this.tbxthoigian.Size = new System.Drawing.Size(38, 38);
-            this.tbxthoigian.TabIndex = 16;
-            // 
-            // btnluuvathoat
-            // 
-            this.btnluuvathoat.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnluuvathoat.Location = new System.Drawing.Point(11, 555);
-            this.btnluuvathoat.Name = "btnluuvathoat";
-            this.btnluuvathoat.Size = new System.Drawing.Size(144, 32);
-            this.btnluuvathoat.TabIndex = 17;
-            this.btnluuvathoat.Text = "Save and Exit";
-            this.btnluuvathoat.UseVisualStyleBackColor = true;
-            this.btnluuvathoat.Click += new System.EventHandler(this.btnluuvathoat_Click);
-            // 
-            // btntieptuc
-            // 
-            this.btntieptuc.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btntieptuc.Location = new System.Drawing.Point(12, 518);
-            this.btntieptuc.Name = "btntieptuc";
-            this.btntieptuc.Size = new System.Drawing.Size(143, 31);
-            this.btntieptuc.TabIndex = 18;
-            this.btntieptuc.Text = "Game đã lưu";
-            this.btntieptuc.UseVisualStyleBackColor = true;
-            // 
             // txbIP
             // 
             this.txbIP.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txbIP.Location = new System.Drawing.Point(911, 433);
-            this.txbIP.Margin = new System.Windows.Forms.Padding(2);
+            this.txbIP.Location = new System.Drawing.Point(1202, 533);
+            this.txbIP.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txbIP.Name = "txbIP";
-            this.txbIP.Size = new System.Drawing.Size(139, 28);
+            this.txbIP.Size = new System.Drawing.Size(197, 34);
             this.txbIP.TabIndex = 19;
+            this.txbIP.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // btnLAN
             // 
-            this.btnLAN.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLAN.Location = new System.Drawing.Point(913, 475);
-            this.btnLAN.Margin = new System.Windows.Forms.Padding(2);
+            this.btnLAN.BackColor = System.Drawing.Color.PeachPuff;
+            this.btnLAN.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.btnLAN.Font = new System.Drawing.Font("Times New Roman", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLAN.Location = new System.Drawing.Point(1202, 585);
+            this.btnLAN.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnLAN.Name = "btnLAN";
-            this.btnLAN.Size = new System.Drawing.Size(136, 72);
+            this.btnLAN.Size = new System.Drawing.Size(197, 89);
             this.btnLAN.TabIndex = 20;
             this.btnLAN.Text = "Connect to LAN";
-            this.btnLAN.UseVisualStyleBackColor = true;
+            this.btnLAN.UseVisualStyleBackColor = false;
             this.btnLAN.Click += new System.EventHandler(this.btnLAN_Click);
             // 
             // pcbCoolDown
             // 
-            this.pcbCoolDown.Location = new System.Drawing.Point(32, 355);
+            this.pcbCoolDown.Location = new System.Drawing.Point(798, 729);
+            this.pcbCoolDown.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pcbCoolDown.Name = "pcbCoolDown";
-            this.pcbCoolDown.Size = new System.Drawing.Size(100, 23);
+            this.pcbCoolDown.Size = new System.Drawing.Size(246, 41);
             this.pcbCoolDown.TabIndex = 21;
             this.pcbCoolDown.Click += new System.EventHandler(this.pcbCoolDown_Click);
             // 
@@ -279,21 +218,50 @@
             // 
             this.tmCoolDown.Tick += new System.EventHandler(this.tmCoolDown_Tick);
             // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = global::TestCode.Properties.Resources.giphy;
+            this.pictureBox2.Location = new System.Drawing.Point(12, 11);
+            this.pictureBox2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(195, 230);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox2.TabIndex = 7;
+            this.pictureBox2.TabStop = false;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::TestCode.Properties.Resources.giphy__1_;
+            this.pictureBox1.Location = new System.Drawing.Point(1202, 11);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(197, 230);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 6;
+            this.pictureBox1.TabStop = false;
+            // 
+            // pctbMark
+            // 
+            this.pctbMark.BackColor = System.Drawing.SystemColors.Control;
+            this.pctbMark.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pctbMark.Location = new System.Drawing.Point(1211, 259);
+            this.pctbMark.Margin = new System.Windows.Forms.Padding(4);
+            this.pctbMark.Name = "pctbMark";
+            this.pctbMark.Size = new System.Drawing.Size(178, 155);
+            this.pctbMark.TabIndex = 2;
+            this.pctbMark.TabStop = false;
+            // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.Silver;
-            this.ClientSize = new System.Drawing.Size(1028, 609);
+            this.BackColor = System.Drawing.Color.BlanchedAlmond;
+            this.ClientSize = new System.Drawing.Size(1417, 787);
             this.Controls.Add(this.pcbCoolDown);
             this.Controls.Add(this.btnLAN);
             this.Controls.Add(this.txbIP);
-            this.Controls.Add(this.btntieptuc);
-            this.Controls.Add(this.btnluuvathoat);
-            this.Controls.Add(this.tbxthoigian);
             this.Controls.Add(this.btnChanhaidau);
             this.Controls.Add(this.btnhuongdan);
-            this.Controls.Add(this.btnQueue);
             this.Controls.Add(this.btnUndo);
             this.Controls.Add(this.btnthoat);
             this.Controls.Add(this.btnNhacNen);
@@ -305,6 +273,7 @@
             this.Controls.Add(this.txbPlayerName);
             this.Controls.Add(this.pnlChessBoard);
             this.ForeColor = System.Drawing.SystemColors.Desktop;
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "Form1";
             this.Text = "Game Caro";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form1_FormClosing);
@@ -332,14 +301,10 @@
 		private System.Windows.Forms.Timer tmluatchoi;
 		private System.Windows.Forms.Button btnthoat;
         private System.Windows.Forms.Button btnUndo;
-        private System.Windows.Forms.Button btnQueue;
         private System.Windows.Forms.Button btnhuongdan;
         private System.Windows.Forms.Timer tmmophong;
         private System.Windows.Forms.Button btnChanhaidau;
-        private System.Windows.Forms.TextBox tbxthoigian;
         private System.Windows.Forms.Timer Tmthoigian;
-        private System.Windows.Forms.Button btnluuvathoat;
-        private System.Windows.Forms.Button btntieptuc;
         private System.Windows.Forms.TextBox txbIP;
         private System.Windows.Forms.Button btnLAN;
         private System.Windows.Forms.ProgressBar pcbCoolDown;

@@ -116,3 +116,8 @@ E:\doan1-master\UPDATE\TestCode\obj\Debug\TestCode.csproj.GenerateResource.cache
 E:\doan1-master\UPDATE\TestCode\obj\Debug\TestCode.csproj.CopyComplete
 E:\doan1-master\UPDATE\TestCode\obj\Debug\TestCode.exe
 E:\doan1-master\UPDATE\TestCode\obj\Debug\TestCode.pdb
+D:\Studying\Năm 3\Đồ án 1\doan1\UPDATE\TestCode\bin\Debug\EntityFramework.dll
+D:\Studying\Năm 3\Đồ án 1\doan1\UPDATE\TestCode\bin\Debug\EntityFramework.SqlServer.dll
+D:\Studying\Năm 3\Đồ án 1\doan1\UPDATE\TestCode\bin\Debug\EntityFramework.xml
+D:\Studying\Năm 3\Đồ án 1\doan1\UPDATE\TestCode\bin\Debug\EntityFramework.SqlServer.xml
+D:\Studying\Năm 3\Đồ án 1\doan1\UPDATE\TestCode\obj\Debug\TestCode.csproj.CopyComplete
