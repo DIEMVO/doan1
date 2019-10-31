@@ -50,6 +50,7 @@
             // btnKhong
             // 
             this.btnKhong.BackColor = System.Drawing.Color.PeachPuff;
+            this.btnKhong.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnKhong.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.btnKhong.Location = new System.Drawing.Point(348, 125);
             this.btnKhong.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -63,6 +64,7 @@
             // btnCo
             // 
             this.btnCo.BackColor = System.Drawing.Color.PeachPuff;
+            this.btnCo.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnCo.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.btnCo.Location = new System.Drawing.Point(348, 188);
             this.btnCo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);

@@ -42,9 +42,6 @@ namespace GameCaro
 
             tmCoolDown.Interval = Cons.COOL_DOWN_INTERVAL;
            
-            //tmCoolDown.Start(); //1/10s(100) thì chạy
-            //Tmthoigian.Interval = Cons.COOL_DOWN_INTERVAL;
-
             socket = new SocketManager();
 
             NewGame();
@@ -60,6 +57,7 @@ namespace GameCaro
             pcbCoolDown.Value = 0;
             tmCoolDown.Stop();
             btnUndo.Enabled = true;
+            BanCo.Xoabanco();
             BanCo.VeBanCo();
             NhacNen.Play();
         }
@@ -115,21 +113,13 @@ namespace GameCaro
 
         public void btnUndo_Click(object sender, EventArgs e)
         {
-           // XuLyBanCo.time = 30;
             Undo();
-            //if (BanCo.PlayTimeLine.Count == 0)
-            //    return;
-            //if (XuLyBanCo.win == 0)
-            //    BanCo.Undo();
-            //else
-            //    btnUndo.Enabled = false;
         }
 
         private void Form1_Load(object sender, EventArgs e)
         {
             this.ActiveControl = btnnewgame;
             XuLyBanCo.Chan = 0;
-            //XuLyBanCo.time = 30;
         }
 
         int dem = 0;
@@ -156,53 +146,6 @@ namespace GameCaro
             }
         }
 
-        private void Tmthoigian_Tick(object sender, EventArgs e)
-        {
-            //XuLyBanCo.time--;
-            //this.tbxthoigian.Text = XuLyBanCo.time.ToString();
-
-            //if (XuLyBanCo.win == 1)
-            //    Tmthoigian.Enabled = false;
-
-            //if (XuLyBanCo.time == 0)
-            //{
-            //    Tmthoigian.Enabled = false;
-            //    pnlChessBoard.Enabled = false;
-            //    //BanCo.LuuVanCo();
-            //    XuLyBanCo.win = 1;
-            //    socket.Send(new SocketData((int)SocketCommand.TIME_OUT, "", new Point()));
-            //    FormChienThang f1 = new FormChienThang();
-            //    f1.Show();
-            //}
-        }
-
-        private void btnluuvathoat_Click(object sender, EventArgs e)
-        {
-            //BanCo.LuuVanCo();
-            StreamWriter write = new StreamWriter("save.txt",false);
-            write.WriteLine(XuLyBanCo.N1);
-            write.WriteLine(XuLyBanCo.N2);
-            write.WriteLine(XuLyBanCo.nguoichoihientai);
-            //write.WriteLine(BanCo.QUEUE.Count());
-
-
-            Point p0 = new Point(0, 0);
-            int kt = 0;
-            //while (BanCo.QUEUE.Count != 0)
-            //{
-            //    Point P = BanCo.QUEUE.Dequeue();
-            //    if (p0 == P)
-            //        kt = 1;
-            //    write.WriteLine(P.X);
-            //    write.WriteLine(P.Y);
-            //}
-            write.WriteLine(kt);
-            write.Close();
-            Tmthoigian.Enabled = false;
-
-            MessageBox.Show("Đã lưu ván cờ!", "Thông báo!");
-            Application.Exit();
-        }
 
         void ChessBoard_PlayerMarked(object sender, ButtonClickEvent e)
         {
@@ -278,9 +221,7 @@ namespace GameCaro
                         pcbCoolDown.Value = 0;
                         pnlChessBoard.Enabled = true;
                         tmCoolDown.Start();
-                        //Tmthoigian.Start();
                         BanCo.OtherPlayerMark(data.Point);
-                        //Tmthoigian.Start();
                         btnUndo.Enabled = true;
                     })); 
                     break;
@@ -289,8 +230,6 @@ namespace GameCaro
                     pcbCoolDown.Value = 0;
                     break;
                 case (int)SocketCommand.END_GAME:
-                    FormChienThang f = new FormChienThang();
-                    f.Show();
                     break;
                 case (int)SocketCommand.TIME_OUT:
                     MessageBox.Show("Đã hết giờ!!!");
@@ -341,10 +280,10 @@ namespace GameCaro
             pcbCoolDown.PerformStep(); //mỗi lần tick khởi động performstep 
         if(pcbCoolDown.Value >= pcbCoolDown.Maximum)
             {
-                
-                
                 EndGame();
                 socket.Send(new SocketData((int)SocketCommand.TIME_OUT, "", new Point()));
+                FormChienThang f1 = new FormChienThang();
+                f1.Show();
             }
 
         }

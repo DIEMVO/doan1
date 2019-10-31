@@ -71,6 +71,7 @@
             // btnOk
             // 
             this.btnOk.BackColor = System.Drawing.Color.PeachPuff;
+            this.btnOk.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnOk.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnOk.ForeColor = System.Drawing.SystemColors.HotTrack;
             this.btnOk.Location = new System.Drawing.Point(242, 138);

@@ -78,6 +78,7 @@
             // button1
             // 
             this.button1.BackColor = System.Drawing.Color.PeachPuff;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.button1.Font = new System.Drawing.Font("Times New Roman", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.ForeColor = System.Drawing.SystemColors.Desktop;
             this.button1.Location = new System.Drawing.Point(228, 250);

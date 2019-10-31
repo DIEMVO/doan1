@@ -56,21 +56,23 @@
             // 
             // pnlChessBoard
             // 
-            this.pnlChessBoard.BackColor = System.Drawing.SystemColors.Control;
+            this.pnlChessBoard.BackColor = System.Drawing.Color.OldLace;
             this.pnlChessBoard.ForeColor = System.Drawing.SystemColors.Desktop;
             this.pnlChessBoard.ImeMode = System.Windows.Forms.ImeMode.Disable;
-            this.pnlChessBoard.Location = new System.Drawing.Point(164, 2);
+            this.pnlChessBoard.Location = new System.Drawing.Point(219, 2);
+            this.pnlChessBoard.Margin = new System.Windows.Forms.Padding(4);
             this.pnlChessBoard.Name = "pnlChessBoard";
-            this.pnlChessBoard.Size = new System.Drawing.Size(722, 578);
+            this.pnlChessBoard.Size = new System.Drawing.Size(963, 711);
             this.pnlChessBoard.TabIndex = 0;
             // 
             // NOTE
             // 
             this.NOTE.AutoSize = true;
             this.NOTE.Font = new System.Drawing.Font("Broadway", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.NOTE.Location = new System.Drawing.Point(908, 353);
+            this.NOTE.Location = new System.Drawing.Point(1211, 434);
+            this.NOTE.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.NOTE.Name = "NOTE";
-            this.NOTE.Size = new System.Drawing.Size(145, 31);
+            this.NOTE.Size = new System.Drawing.Size(177, 38);
             this.NOTE.TabIndex = 5;
             this.NOTE.Text = "Cờ Ca Rô";
             // 
@@ -79,9 +81,10 @@
             this.txbPlayerName.Enabled = false;
             this.txbPlayerName.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.txbPlayerName.ForeColor = System.Drawing.SystemColors.Desktop;
-            this.txbPlayerName.Location = new System.Drawing.Point(272, 592);
+            this.txbPlayerName.Location = new System.Drawing.Point(363, 729);
+            this.txbPlayerName.Margin = new System.Windows.Forms.Padding(4);
             this.txbPlayerName.Name = "txbPlayerName";
-            this.txbPlayerName.Size = new System.Drawing.Size(191, 35);
+            this.txbPlayerName.Size = new System.Drawing.Size(253, 42);
             this.txbPlayerName.TabIndex = 0;
             // 
             // tmnote
@@ -93,11 +96,12 @@
             // btnnewgame
             // 
             this.btnnewgame.BackColor = System.Drawing.Color.PeachPuff;
+            this.btnnewgame.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnnewgame.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.btnnewgame.Location = new System.Drawing.Point(11, 548);
-            this.btnnewgame.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnnewgame.Location = new System.Drawing.Point(15, 674);
+            this.btnnewgame.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnnewgame.Name = "btnnewgame";
-            this.btnnewgame.Size = new System.Drawing.Size(144, 34);
+            this.btnnewgame.Size = new System.Drawing.Size(192, 42);
             this.btnnewgame.TabIndex = 8;
             this.btnnewgame.Text = "NEW GAME";
             this.btnnewgame.UseVisualStyleBackColor = false;
@@ -106,11 +110,12 @@
             // btnNhacNen
             // 
             this.btnNhacNen.BackColor = System.Drawing.Color.PeachPuff;
+            this.btnNhacNen.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnNhacNen.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.btnNhacNen.Location = new System.Drawing.Point(11, 505);
-            this.btnNhacNen.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnNhacNen.Location = new System.Drawing.Point(15, 622);
+            this.btnNhacNen.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnNhacNen.Name = "btnNhacNen";
-            this.btnNhacNen.Size = new System.Drawing.Size(144, 32);
+            this.btnNhacNen.Size = new System.Drawing.Size(192, 39);
             this.btnNhacNen.TabIndex = 10;
             this.btnNhacNen.Text = "Music ON";
             this.btnNhacNen.UseVisualStyleBackColor = false;
@@ -119,11 +124,12 @@
             // btnthoat
             // 
             this.btnthoat.BackColor = System.Drawing.Color.PeachPuff;
+            this.btnthoat.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnthoat.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.btnthoat.Location = new System.Drawing.Point(11, 592);
-            this.btnthoat.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnthoat.Location = new System.Drawing.Point(15, 729);
+            this.btnthoat.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnthoat.Name = "btnthoat";
-            this.btnthoat.Size = new System.Drawing.Size(144, 33);
+            this.btnthoat.Size = new System.Drawing.Size(192, 41);
             this.btnthoat.TabIndex = 11;
             this.btnthoat.Text = "THOÁT";
             this.btnthoat.UseVisualStyleBackColor = false;
@@ -132,11 +138,12 @@
             // btnUndo
             // 
             this.btnUndo.BackColor = System.Drawing.Color.PeachPuff;
+            this.btnUndo.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnUndo.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnUndo.Location = new System.Drawing.Point(11, 239);
-            this.btnUndo.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnUndo.Location = new System.Drawing.Point(15, 294);
+            this.btnUndo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnUndo.Name = "btnUndo";
-            this.btnUndo.Size = new System.Drawing.Size(144, 30);
+            this.btnUndo.Size = new System.Drawing.Size(192, 37);
             this.btnUndo.TabIndex = 12;
             this.btnUndo.Text = "UNDO";
             this.btnUndo.UseVisualStyleBackColor = false;
@@ -145,10 +152,12 @@
             // btnhuongdan
             // 
             this.btnhuongdan.BackColor = System.Drawing.Color.PeachPuff;
+            this.btnhuongdan.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnhuongdan.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnhuongdan.Location = new System.Drawing.Point(902, 581);
+            this.btnhuongdan.Location = new System.Drawing.Point(1203, 715);
+            this.btnhuongdan.Margin = new System.Windows.Forms.Padding(4);
             this.btnhuongdan.Name = "btnhuongdan";
-            this.btnhuongdan.Size = new System.Drawing.Size(147, 45);
+            this.btnhuongdan.Size = new System.Drawing.Size(196, 55);
             this.btnhuongdan.TabIndex = 14;
             this.btnhuongdan.Text = "Hướng dẫn";
             this.btnhuongdan.UseVisualStyleBackColor = false;
@@ -161,10 +170,12 @@
             // btnChanhaidau
             // 
             this.btnChanhaidau.BackColor = System.Drawing.Color.PeachPuff;
+            this.btnChanhaidau.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnChanhaidau.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnChanhaidau.Location = new System.Drawing.Point(11, 284);
+            this.btnChanhaidau.Location = new System.Drawing.Point(15, 350);
+            this.btnChanhaidau.Margin = new System.Windows.Forms.Padding(4);
             this.btnChanhaidau.Name = "btnChanhaidau";
-            this.btnChanhaidau.Size = new System.Drawing.Size(144, 33);
+            this.btnChanhaidau.Size = new System.Drawing.Size(192, 41);
             this.btnChanhaidau.TabIndex = 15;
             this.btnChanhaidau.Text = "Chặn hai đầu";
             this.btnChanhaidau.UseVisualStyleBackColor = false;
@@ -174,15 +185,14 @@
             // 
             this.Tmthoigian.Enabled = true;
             this.Tmthoigian.Interval = 1000;
-            this.Tmthoigian.Tick += new System.EventHandler(this.Tmthoigian_Tick);
             // 
             // txbIP
             // 
-            this.txbIP.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txbIP.Location = new System.Drawing.Point(902, 433);
-            this.txbIP.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txbIP.Font = new System.Drawing.Font("Times New Roman", 13.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txbIP.Location = new System.Drawing.Point(1203, 533);
+            this.txbIP.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txbIP.Name = "txbIP";
-            this.txbIP.Size = new System.Drawing.Size(149, 28);
+            this.txbIP.Size = new System.Drawing.Size(197, 34);
             this.txbIP.TabIndex = 19;
             this.txbIP.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -190,11 +200,12 @@
             // 
             this.btnLAN.BackColor = System.Drawing.Color.PeachPuff;
             this.btnLAN.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.btnLAN.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnLAN.Font = new System.Drawing.Font("Times New Roman", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLAN.Location = new System.Drawing.Point(902, 475);
-            this.btnLAN.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnLAN.Location = new System.Drawing.Point(1203, 585);
+            this.btnLAN.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnLAN.Name = "btnLAN";
-            this.btnLAN.Size = new System.Drawing.Size(148, 72);
+            this.btnLAN.Size = new System.Drawing.Size(197, 89);
             this.btnLAN.TabIndex = 20;
             this.btnLAN.Text = "Connect to LAN";
             this.btnLAN.UseVisualStyleBackColor = false;
@@ -202,9 +213,10 @@
             // 
             // pcbCoolDown
             // 
-            this.pcbCoolDown.Location = new System.Drawing.Point(598, 592);
+            this.pcbCoolDown.Location = new System.Drawing.Point(797, 729);
+            this.pcbCoolDown.Margin = new System.Windows.Forms.Padding(4);
             this.pcbCoolDown.Name = "pcbCoolDown";
-            this.pcbCoolDown.Size = new System.Drawing.Size(184, 33);
+            this.pcbCoolDown.Size = new System.Drawing.Size(245, 41);
             this.pcbCoolDown.TabIndex = 21;
             this.pcbCoolDown.Click += new System.EventHandler(this.pcbCoolDown_Click);
             // 
@@ -215,10 +227,10 @@
             // pictureBox2
             // 
             this.pictureBox2.Image = global::TestCode.Properties.Resources.giphy;
-            this.pictureBox2.Location = new System.Drawing.Point(9, 9);
-            this.pictureBox2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pictureBox2.Location = new System.Drawing.Point(12, 11);
+            this.pictureBox2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(146, 187);
+            this.pictureBox2.Size = new System.Drawing.Size(195, 230);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox2.TabIndex = 7;
             this.pictureBox2.TabStop = false;
@@ -226,10 +238,10 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = global::TestCode.Properties.Resources.giphy__1_;
-            this.pictureBox1.Location = new System.Drawing.Point(902, 9);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pictureBox1.Location = new System.Drawing.Point(1203, 11);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(148, 187);
+            this.pictureBox1.Size = new System.Drawing.Size(197, 230);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 6;
             this.pictureBox1.TabStop = false;
@@ -238,18 +250,19 @@
             // 
             this.pctbMark.BackColor = System.Drawing.SystemColors.Control;
             this.pctbMark.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pctbMark.Location = new System.Drawing.Point(908, 210);
+            this.pctbMark.Location = new System.Drawing.Point(1211, 258);
+            this.pctbMark.Margin = new System.Windows.Forms.Padding(4);
             this.pctbMark.Name = "pctbMark";
-            this.pctbMark.Size = new System.Drawing.Size(134, 126);
+            this.pctbMark.Size = new System.Drawing.Size(179, 155);
             this.pctbMark.TabIndex = 2;
             this.pctbMark.TabStop = false;
             // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.BlanchedAlmond;
-            this.ClientSize = new System.Drawing.Size(1028, 609);
+            this.ClientSize = new System.Drawing.Size(1419, 787);
             this.Controls.Add(this.pcbCoolDown);
             this.Controls.Add(this.btnLAN);
             this.Controls.Add(this.txbIP);
@@ -266,6 +279,7 @@
             this.Controls.Add(this.txbPlayerName);
             this.Controls.Add(this.pnlChessBoard);
             this.ForeColor = System.Drawing.SystemColors.Desktop;
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Form1";
             this.Text = "Game Caro";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form1_FormClosing);
