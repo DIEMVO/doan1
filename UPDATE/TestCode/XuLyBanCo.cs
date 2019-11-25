@@ -262,12 +262,8 @@ namespace GameCaro
             bool isUndo2 = UndoAStep();
 
             PlayInfo oldPoint = PlayTimeLine.Top();
-            if (nguoichoihientai == 0)
-            {
-                NguoiChoiHienTai = 1;
-            }
-            else
-                NguoiChoiHienTai = 0; 
+
+            NguoiChoiHienTai = oldPoint.NguoiChoiHienTai == 1 ? 0 : 1;
 
             return isUndo1 && isUndo2;
         }
